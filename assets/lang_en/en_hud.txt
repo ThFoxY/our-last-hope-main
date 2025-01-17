@@ -1,0 +1,35 @@
+[============CONTROLS=============][====DIALOG=========================================================================]
+ 🗺️ Map: (m) 🎒 Inventory: (i)
+ 👉 Interact: (e) 💾 Save: (s)
+[=====HEALTH=====][====================================================================================================]
+ ❤️❤️❤️
+ ❤️❤️🖤
+ ❤️🖤🖤
+[============PLACES====================================================================================================]
+ ◀️ Back: (b) 🌲 Forest: (f) 🏙️ Town: (t) 🌼 Park: (p) ⛵ Lake: (l) 🏪 Mall: (m) 🏕️ Camp: (c)
+[====ITEMS=============================================================================================================]
+ ◀️ Back: (b) 🔎 Item 1: (1) 🔎 Item 2: (2) 🔎 Item 3: (3)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     It's too dark to see anything! I need to find something to light this place up.
+ 👉 Interact: (e) 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     This is a lot better with some light! This forest should take me to the mall.
+ 👉 Interact: (e) 💾 Save: (s)     But I have to be careful.
+ 🗺️ Map: (m) 🎒 Inventory: (i)     Larry gave me two cans of tomato soup. The most interesting place to explore is
+ 👉 Interact: (e) 💾 Save: (s)     the mall. I should check my map!
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The park is closed. If only I could find something to break the lock.
+ 👉 Interact: (e) 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I should be able to break the lock now.
+ 👉 Interact: (e) 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The lake is only accessible from the park. I need to go and look for the park
+ 👉 Interact: (e) 💾 Save: (s)     entrance. Fortunately, it's not too far away.
+ 🗺️ Map: (m) 🎒 Inventory: (i)     Even if this place seems already cleared. I might find some useful leftovers :
+ 👉 Interact: (e) 💾 Save: (s)     🥫 find Supplies: (<) or 🔩 find Materials: (>)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     While checking out the cars, I was able to grab a few materials:
+ 👉 Interact: (e) 💾 Save: (s)     +6 📻 Radio antenna | +1 🪓 Axe
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The mall is the perfect place to find materials and supplies, but it's too far
+ 👉 Interact: (e) 💾 Save: (s)     away. I have to find another way to get there.
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I've already been here. It seems there is nothing left. I should check the park.
+ 👉 Interact: (e) 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I found a can of tomato soup, but I cut myself opened in the process..
+ 👉 Interact: (e) 💾 Save: (s)     +1 🥫 Can | -1 ❤️ Heart
+
+SAFE

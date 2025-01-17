@@ -1,0 +1,35 @@
+[=============CONTRÔLES=============][====DIALOGUE=====================================================================]
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)                                                                                     
+ 👉 Interagir : (e) 💾 Sauver : (s)                                                                                    
+[=====VIE=====][=======================================================================================================]
+ ❤️❤️❤️
+ ❤️❤️🖤
+ ❤️🖤🖤
+[=============LIEUX====================================================================================================]
+ ◀️ Retour : (b) 🌲 Forêt : (f) 🏙️ Ville : (t) 🌼 Parc : (p) ⛵ Lac : (l) 🏪 Magasin : (m) 🏕️ Camp : (c)
+[====OBJETS============================================================================================================]
+ ◀️ Retour : (b) 🔎 Obj 1 : (1) 🔎 Obj 2 : (2) 🔎 Obj 3 : (3)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Il fait trop sombre pour y voir quoi que ce soit ! Il faut que je trouve quelque
+ 👉 Interagir : (e) 💾 Sauver : (s)  chose pour éclairer cet endroit.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  C'est beaucoup mieux avec un peu de lumière. Cette forêt devrait me mener au
+ 👉 Interagir : (e) 💾 Sauver : (s)  centre commercial. Je dois rester prudent.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Larry m'a donné deux conserves de soupe à la tomate. Le centre commercial est
+ 👉 Interagir : (e) 💾 Sauver : (s)  l'endroit le plus intéressant à explorer. Je devrais regarder ma carte !
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Le parc est fermé. Si seulement je pouvais trouver quelque chose pour briser
+ 👉 Interagir : (e) 💾 Sauver : (s)  le verrou.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je devrais pouvoir faire sauter le verrou maintenant.
+ 👉 Interagir : (e) 💾 Sauver : (s)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Le lac n'est accessible que depuis le parc. Je dois aller vérifier
+ 👉 Interagir : (e) 💾 Sauver : (s)  l'entrée du parc. Heureusement, ce n'est pas si loin d'ici.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Même si cet endroit semble dégagé. Je pourrais trouver quelques restes utiles
+ 👉 Interagir : (e) 💾 Sauver : (s)  🥫 chercher des Vivres : (<) ou 🔩 chercher des Matériaux : (>)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Pendant que je vérifiais les voitures, j'ai pu récupérer quelques matériaux :
+ 👉 Interagir : (e) 💾 Sauver : (s)  +6 📻 Antenne radio | +1 🪓 Hache
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Le centre commercial est l'endroit idéal pour trouver des ressources, mais il
+ 👉 Interagir : (e) 💾 Sauver : (s)  est très éloigné. Je dois trouver un autre moyen d'y parvenir.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je suis déjà passé par ici. Il n'y a plus rien à prendre. Je devrais aller voir
+ 👉 Interagir : (e) 💾 Sauver : (s)  le parc.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  En cherchant une conserve, je me suis coupé.
+ 👉 Interagir : (e) 💾 Sauver : (s)  +1 🥫 Conserve | -1 ❤️ Cœur
+
+SAFE

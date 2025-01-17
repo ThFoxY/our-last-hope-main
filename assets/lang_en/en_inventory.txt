@@ -1,0 +1,12 @@
+🔦 Flashlight:
+Use it to explore dark spaces. Be careful, it might run out of batteries!
+🪓 Axe:
+Use it to damage things. It's very sharp, don't cut yourself.
+🥫 Can:
+Fresh tomato soup. You could live a thousand years with it!
+📻 Radio antenna:
+It's necessary to have an antenna if you want your radio emitter to work.
+📟 Monitor:
+Could be use for electronic parts.
+
+SAFE

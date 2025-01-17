@@ -1,0 +1,13 @@
+
+
+[1] Débuter
+=====Fichier n°1=====
+=====Fichier n°2=====
+=====Fichier n°3=====
+Nouvelle partie
+[1] Fichier n°1 | [2] Fichier n°2 | [3] Fichier n°3 : 
+[1] Jouer | [2] Supprimer | [3] Retour : 
+Que voulez-vous faire ? 
+Entrez un nom : 
+[1] Suivant : 
+Langage :
