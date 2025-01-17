@@ -6,4 +6,5 @@ bunker’s radio emitter picks up a message: a group of scientists has built a r
 habitable planet. The rocket launches in three days.
 Before you can respond, the radio overheats and catches fire. Amid the chaos, you resolve to repair it. Larry,
 too scared to leave, will be here to supply you near the camp, where you will be able to trade materials for some
-supplies. Time is running out: only 3 days remain 
+supplies. Time is running out.
+Only 3 days remain 

@@ -1,24 +1,25 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 15/01/2025
 
-// Description :
+// Description:
     /* Initializes the map screen */
 
+// Librairie(s):
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include "functions.h"
 
-// Constants:
+// Constant(s):
+#define FILE_NAME_MAX_LENGTH 20
 #define TILE_WIDTH 40
 #define TILE_HEIGHT 8
-#define FILE_NAME_MAX_LENGTH 20
 #define TILE_TYPES_COUNT 6
 
 // Tiles:
 char* TILE_TOWN[TILE_HEIGHT] = {
     "........................................",
-    ". TOWN                                 .",
+    ".                                      .",
     ".       ^    #####     ^               .",
     ".            #0#0#           #####  ^  .",
     ".    #####   ##/##  ^        #0#0#     .",
@@ -29,18 +30,18 @@ char* TILE_TOWN[TILE_HEIGHT] = {
 
 char* TILE_MALL[TILE_HEIGHT] = {
     "........................................",
-    ". MALL                                 .",
+    ".                                      .",
     ".       ^    ########################  .",
     ".   ^        ########################  .",
     ".         ^  ##0000###000000###0000##  .",
     ". ^          ##0000###00//00###0000##  .",
-    ".     ^                               .",
+    ".     ^                                .",
     "........................................"
 };
 
 char* TILE_PARK[TILE_HEIGHT] = {
     "........................................",
-    ". PARK                                 .",
+    ".                                      .",
     ".        ^          ^     ^     o  ^   .",
     ".   ^    |    o  ^  |     |   ^    |   .",
     ".   |     ^      |            |        .",
@@ -51,7 +52,7 @@ char* TILE_PARK[TILE_HEIGHT] = {
 
 char* TILE_LAKE[TILE_HEIGHT] = {
     "........................................",
-    ". LAKE                                 .",
+    ".                                      .",
     ".            ~^~^     ~^~^       ~^~^  .",
     ".  ~^~^    ~^~^          ~^~^          .",
     ".                    ~^~^         ~^~^ .",
@@ -62,7 +63,7 @@ char* TILE_LAKE[TILE_HEIGHT] = {
 
 char* TILE_FOREST[TILE_HEIGHT] = {
     "........................................",
-    ". FOREST                               .",
+    ".                                      .",
     ".        ^    ^     ^     ^        ^   .",
     ".   ^    |    |  ^  |     |   ^    |   .",
     ".   |     ^      |     ^      |        .",
@@ -176,7 +177,7 @@ void loadMap(char** map[MAP_ROWS][MAP_COLS], const char* filename) {
     fclose(file);
 }
 
-// Creates a map screen:
+// Initializes the map screen:
 void initMap() {
     do{
         clearScreen();
@@ -189,9 +190,9 @@ void initMap() {
         hudElements(2);
         healthBar(playerHealth);
 
-        playerInteractCHAR = interactPlayerCHAR();
+        playerInteract = interactPlayer();
 
-        switch(playerInteractCHAR) {
+        switch(playerInteract) {
             case 'b': // Go back to last screen.
                 lastPlayedScreen(lastScreen);
                 break;
@@ -211,8 +212,8 @@ void initMap() {
                 initMallArea();
                 break;
             case 'c':
-                initCampFireArea();
+                initCampArea();
                 break;
         }
-    }while(playerInteractCHAR != 'b' && playerInteractCHAR != 'f' && playerInteractCHAR != 't' && playerInteractCHAR != 'p' && playerInteractCHAR != 'l' && playerInteractCHAR != 'm' && playerInteractCHAR != 'c' );
+    }while(playerInteract != 'b' && playerInteract != 'f' && playerInteract != 't' && playerInteract != 'p' && playerInteract != 'l' && playerInteract != 'm' && playerInteract != 'c' );
 }

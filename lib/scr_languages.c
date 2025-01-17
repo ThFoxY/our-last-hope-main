@@ -1,34 +1,41 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 13/01/2025
 
-// Description :
-    /* Initializes the language selection screen */
+// Description:
+    /* Initializes the language screen: the player can use between English or French */
 
+// Librairie(s):
 #include <stdio.h>
-#include "functions.h"
+#include "functions.h" // Links external components (functions and variables).
 
-int languageChosen;
+// Variable(s):
+int languageChosen; // Holds the language chosen by the player (0: English, 1: French).
 
-// Retrieves chosen language (0 being English (default), 1 being French):
-int chosenLanguage() {
+// Gets the language chosen by the player:
+int setLanguage() {
     int lang;
+    char input_length[10];
 
-    newLine(4);
     readUniqueLine("assets/lang_en/en_strings.txt", 13);
-    scanf("%d", &lang);
-
-    return lang;
+    if(fgets(input_length, sizeof(input_length), stdin)) {
+        if(sscanf(input_length, "%d", &lang) == 1 && (lang == 0 || lang == 1)) {
+            return lang;
+        }else{
+            initLanguageScreen(); // Restarts the screen if an error occurs.
+        }
+    }
 }
 
-// Creates language selection screen:
-void initLanguagesScreen() {
-    do{
-        clearScreen();
-        readUniqueLine("assets/lang_en/en_strings.txt", 1);
-        readUniqueLine("assets/lang_en/en_strings.txt", 2);
+// Initializes the language screen:
+void initLanguageScreen() {
+    clearScreen();
 
-        languageChosen = chosenLanguage();
-    }while(languageChosen != 0 && languageChosen != 1);
+    readUniqueLine("assets/lang_en/en_strings.txt", 1);
+    readUniqueLine("assets/lang_en/en_strings.txt", 2);
 
-    gameLoop(1);
+    newLine(4);
+        
+    languageChosen = setLanguage(); // Retrieves the language chosen by the player and saves it.
+
+    gameLoop(1); // Goes to the title screen.
 }

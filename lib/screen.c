@@ -1,13 +1,15 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 13/01/2025
 
-// Description :
-    /* Functions relative to the game screen */
+// Description:
+    /* Functions use to print graphic elements */
 
+// Librairie(s):
 #include <stdio.h>
 #include <stdlib.h>
 #include "functions.h"
 
+// Variable(s):
 int lastScreen;
 
 // Clears the current screen:
@@ -16,12 +18,12 @@ void clearScreen() {
         // ! Windows only.
         system("cls");
     #else
-        // ! UNIX only.
         system("clear");
     #endif
 }
 
 // Creates a new line:
+    /* number is an integer that specifies the number of new lines to print */
 void newLine(int number) {
     for(int i = 0; i < number; i++) {
         printf("\n");
@@ -29,6 +31,7 @@ void newLine(int number) {
 }
 
 // Creates a tabulation:
+    /* number is an integer that specifies the number of tabulation to print */
 void tab(int number) {
     for (int i = 0; i < number; i++) {
         printf("\t");
@@ -36,11 +39,13 @@ void tab(int number) {
 }
 
 // Saves the last played screen:
+    /* screen is an integer that specifies the last screen played */
+    //! This function is use to get back on the right screen, scene or area when looking at the map or in the inventory.
 void lastPlayedScreen(int screen) {
     switch(screen) {
         // Area:
         case 1:
-            initCampFireArea();
+            initCampArea();
             break;
         // Forest:
         case 2:
@@ -65,7 +70,8 @@ void lastPlayedScreen(int screen) {
     }
 }
 
-// Creates the HUD:
+// Displays the HUD (Head up display):
+    /* screen is an integer that specifies the current screen the player is on */
 void hudHeader(int screen) {
     switch(screen) {
         case 1:
@@ -97,21 +103,22 @@ void hudHeader(int screen) {
     }
 }
 
-// Creates specific elements for each HUD:
+// Displays specific elements for the HUD (Head up display):
 void hudElements(int screen) {
+    /* screen is an integer that specifies the current screen the player is on */
     switch(screen) {
         case 1:
         // Area:
 
             // Camp:
             if(currentScreen == 5) {
-                if(item2 == 0) {
+                if(item2 == 0) { // The player does not have the axe.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 16, 17);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 16, 17);
                     }
-                }else{
+                }else{ //! To do.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 16, 17);
                     }else{
@@ -122,13 +129,13 @@ void hudElements(int screen) {
 
             // Forest:
             if(currentScreen == 6) {
-                if(item1 == 0) {
+                if(item1 == 0) { // The player does not have the flashlight.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 12, 13);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 12, 13);
                     }
-                }else{
+                }else{ // The player has it.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 14, 15);
                     }else{
@@ -139,13 +146,13 @@ void hudElements(int screen) {
 
             // Town:
             if(currentScreen == 7) {
-                if(item2 == 0) {
+                if(item2 == 0) { // The player does not have the axe.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 24, 25);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 24, 25);
                     }
-                }else{
+                }else{ // The player has it.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 30, 31);
                     }else{
@@ -156,7 +163,7 @@ void hudElements(int screen) {
 
             // Town materials:
             if(currentScreen == 13) {
-                if(languageChosen == 0) {
+                if(languageChosen == 0) { // The player chooses to search for materials.
                     readBetween("assets/lang_en/en_hud.txt", 26, 27);
                 }else{
                     readBetween("assets/lang_fr/fr_hud.txt", 26, 27);
@@ -165,7 +172,7 @@ void hudElements(int screen) {
 
             // Town supplies:
             if(currentScreen == 14) {
-                if(languageChosen == 0) {
+                if(languageChosen == 0) { // The player chooses to search for supplies.
                     readBetween("assets/lang_en/en_hud.txt", 32, 33);
                 }else{
                     readBetween("assets/lang_fr/fr_hud.txt", 32, 33);
@@ -174,13 +181,13 @@ void hudElements(int screen) {
 
             // Park:
             if(currentScreen == 9) {
-                if(item2 == 0) {
+                if(item2 == 0) { // The player does not have the axe.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 18, 19);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 18, 19);
                     }
-                }else{
+                }else{ // The player has it.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 20, 21);
                     }else{
@@ -191,7 +198,7 @@ void hudElements(int screen) {
 
             // Lake:
             if(currentScreen == 8) {
-                // Add condition.
+                //! To do.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 22, 23);
                     }else{
@@ -201,7 +208,7 @@ void hudElements(int screen) {
 
             // Mall:
             if(currentScreen == 10) {
-                // Add condition.
+                //! To do.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 28, 29);
                     }else{

@@ -6,4 +6,5 @@ l'émetteur radio de votre bunker capte un message : un groupe de scientifiques 
 survivants vers une nouvelle planète habitable. La fusée sera lancée dans trois jours.
 Avant que vous ne puissiez réagir, l'émetteur surchauffe et prend feu. Au milieu du chaos, vous décidez de le réparer.
 Larry, trop effrayé pour partir, restera au camp pour vous approvisionner, où vous pourrez échanger des matériaux
-pour des vivres. Le temps presse : il ne reste que 3 jours 
+pour des vivres. Le temps presse.
+Il ne reste que 3 jours 

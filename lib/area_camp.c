@@ -1,14 +1,15 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 14/01/2025
 
-// Description :
+// Description:
     /* Initializes the campfire area */
 
+// Librairie(s):
 #include <stdio.h>
 #include "functions.h"
 
-// Creates the camp scene:
-void initCampFireArea() {
+// Initializes the camp area:
+void initCampArea() {
     do{
         clearScreen();
 
@@ -21,9 +22,9 @@ void initCampFireArea() {
         hudElements(1);
         healthBar(playerHealth);
 
-        playerInteractCHAR = interactPlayerCHAR();
+        playerInteract = interactPlayer();
 
-        switch(playerInteractCHAR) {
+        switch(playerInteract) {
             case 'm':
                 gameLoop(11);
                 break;
@@ -37,5 +38,5 @@ void initCampFireArea() {
                 // Do something.
                 break;
         }
-    }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
 }

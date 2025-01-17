@@ -1,13 +1,14 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 16/01/2025
 
-// Description :
+// Description:
     /* Initializes the mall area */
 
+// Librairie(s):
 #include <stdio.h>
 #include "functions.h"
 
-// Creates the mall scene:
+// Initializes the mall area:
 void initMallArea() {
     do{
         clearScreen();
@@ -21,14 +22,14 @@ void initMallArea() {
         hudElements(1);
         healthBar(playerHealth);
 
-        playerInteractCHAR = interactPlayerCHAR();
+        playerInteract = interactPlayer();
 
-        switch(playerInteractCHAR) {
+        switch(playerInteract) {
             case 'm':
-                initMap();
+                gameLoop(11);
                 break;
             case 'i':
-                initInventory();
+                gameLoop(12);
                 break;
             case 'e':
                 // Do something.
@@ -37,5 +38,5 @@ void initMallArea() {
                 // Do something.
                 break;
         }
-    }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
 }

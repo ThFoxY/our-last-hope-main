@@ -1,13 +1,14 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 16/01/2025
 
-// Description :
+// Description:
     /* Initializes the park area */
 
+// Librairie(s):
 #include <stdio.h>
 #include "functions.h"
 
-// Creates the park scene:
+// Initializes the park area:
 void initParkArea() {
     do{
         clearScreen();
@@ -21,14 +22,14 @@ void initParkArea() {
         hudElements(1);
         healthBar(playerHealth);
 
-        playerInteractCHAR = interactPlayerCHAR();
+        playerInteract = interactPlayer();
 
-        switch(playerInteractCHAR) {
+        switch(playerInteract) {
             case 'm':
-                initMap();
+                gameLoop(11);
                 break;
             case 'i':
-                initInventory();
+                gameLoop(12);
                 break;
             case 'e':
                 // Do something.
@@ -37,5 +38,5 @@ void initParkArea() {
                 // Do something.
                 break;     
         }
-    }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
 }

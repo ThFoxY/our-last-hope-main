@@ -1,35 +1,34 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 13/01/2025
 
-// Imports all of the functions needed to launch the game.
+// Description:
+    /* Imports all the functions needed: contains common components for every files to use */
+
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-// Constants
+// Constant(s):
 #define MAP_ROWS 2
 #define MAP_COLS 3
 
 // External values:
 
-    // Retrieves chosen language (0 being English (default), 1 being French):
+    // Retrieves chosen language:
     extern int languageChosen;
 
-    // Retrieves chosen save file (between 1 and 3):
+    // Retrieves chosen save file:
     extern int saveFileChosen;
 
     // Retrieves player's current health:
     extern int playerHealth;
 
-    // Retrieves player's interaction (only int):
-    extern int playerInteractINT;
-
-    // Retrieves player's interaction (only character):
-    extern char playerInteractCHAR;
+    // Retrieves player's interaction:
+    extern char playerInteract;
 
     // Retrieves current screen:
     extern int currentScreen;
 
-    // Retrieves player's last screen played:
+    // Retrieves last screen played:
     extern int lastScreen;
 
     // Retrieves map:
@@ -42,12 +41,12 @@
     extern int item4; // Radio antenna.
     extern int item5; // Monitor.
 
-// game.c
+// Mains functions:
+    // game.c
 void gameLoop();
 
-// Mains functions:
     // scr_languages.c
-void initLanguagesScreen();
+void initLanguageScreen();
 
     // scr_title.c
 void initTitleScreen();
@@ -62,7 +61,7 @@ void initNamingScreen();
 void initOpeningCutscene();
 
     // area_campfire.c
-void initCampFireArea();
+void initCampArea();
 
     // area_forest.c
 void initForestArea();
@@ -84,7 +83,6 @@ void initMallArea();
     // scr_map.c
 void initMap();
 void generateNewMap();
-void viewMap();
 void saveMap();
 void loadMap();
 
@@ -108,7 +106,6 @@ void lastPlayedScreen();
     // player.c
 void healthBar();
 void getPlayerName();
-int interactPlayerINT();
-char interactPlayerCHAR();
+char interactPlayer();
 
 #endif // FUNCTIONS_H

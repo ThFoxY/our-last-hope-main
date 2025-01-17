@@ -1,17 +1,19 @@
 // Created by: PACE--BOULNOIS Lysandre and MELOCCO David
 // Created on: 16/01/2025
 
-// Description :
+// Description:
     /* Initializes the town area */
 
+// Librairie(s):
 #include <stdio.h>
 #include "functions.h"
 
-// Check for supplies
+// Check for supplies:
 void initTownMaterials() {
     do{
         clearScreen();
 
+        // Items given:
         item2 += 1;
         item4 += 6;
 
@@ -24,9 +26,9 @@ void initTownMaterials() {
         hudElements(1);
         healthBar(playerHealth);
 
-        playerInteractCHAR = interactPlayerCHAR();
+        playerInteract = interactPlayer();
 
-        switch(playerInteractCHAR) {
+        switch(playerInteract) {
             case 'm':
                 initMap();
                 break;
@@ -40,14 +42,15 @@ void initTownMaterials() {
                 // Do something.
                 break;
         }
-    }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
 }
 
-// Check for supplies
+// Check for supplies:
 void initTownSupplies() {
     do{
         clearScreen();
 
+        // Items given:
         item3 += 1;
         playerHealth -= 1;
 
@@ -60,14 +63,14 @@ void initTownSupplies() {
         hudElements(1);
         healthBar(playerHealth);
 
-        playerInteractCHAR = interactPlayerCHAR();
+        playerInteract = interactPlayer();
 
-        switch(playerInteractCHAR) {
+        switch(playerInteract) {
             case 'm':
-                initMap();
+                gameLoop(11);
                 break;
             case 'i':
-                initInventory();
+                gameLoop(12);
                 break;
             case 'e':
                 // Do something.
@@ -76,13 +79,13 @@ void initTownSupplies() {
                 // Do something.
                 break;
         }
-    }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
 }
 
-// Creates the town scene:
+// Initializes the town area:
 void initTownArea() {
     // Has not checked the town:
-    if(item2 == 0) {
+    if(item2 == 0) { // The player does not have the axe.
         do{
             clearScreen();
 
@@ -95,14 +98,14 @@ void initTownArea() {
             hudElements(1);
             healthBar(playerHealth);
 
-            playerInteractCHAR = interactPlayerCHAR();
+            playerInteract = interactPlayer();
 
-            switch(playerInteractCHAR) {
+            switch(playerInteract) {
                 case 'm':
-                    initMap();
+                    gameLoop(11);
                     break;
                 case 'i':
-                    initInventory();
+                    gameLoop(12);
                     break;
                 case 'e':
                     // Do something.
@@ -117,11 +120,11 @@ void initTownArea() {
                     initTownMaterials();
                     break;
             }
-        }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's' && playerInteractCHAR != '<' && playerInteractCHAR != '>');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
     }
 
     // Has checked the town:
-    if(item2 > 0) {
+    if(item2 > 0) { // Has it.
         do{
             clearScreen();
 
@@ -134,14 +137,14 @@ void initTownArea() {
             hudElements(1);
             healthBar(playerHealth);
 
-            playerInteractCHAR = interactPlayerCHAR();
+            playerInteract = interactPlayer();
 
-            switch(playerInteractCHAR) {
+            switch(playerInteract) {
                 case 'm':
-                    initMap();
+                    gameLoop(11);
                     break;
                 case 'i':
-                    initInventory();
+                    gameLoop(12);
                     break;
                 case 'e':
                     // Do something.
@@ -150,6 +153,6 @@ void initTownArea() {
                     // Do something.
                     break;
             }
-        }while(playerInteractCHAR != 'm' && playerInteractCHAR != 'i' && playerInteractCHAR != 'e' && playerInteractCHAR != 's');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
     }
 }
