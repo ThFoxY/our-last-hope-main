@@ -65,10 +65,37 @@ void gameLoop(int currentScreen) {
                 initInventory();
                 break;
             case 13:
-                initTownSupplies();
+                initTownMaterials();
                 break;
             case 14:
-                initTownMaterials();
+                initTownSupplies();
+                break;
+            case 15:
+                initParkMaterials();
+                break;
+            case 16:
+                initParkSupplies();
+                break;
+            case 17:
+                initWoodenShed();
+                break;
+            case 18:
+                initLeftPath();
+                break;
+            case 19:
+                initRightPath();
+                break;
+            case 20:
+                initForestHelp();
+                break;
+            case 21:
+                initForestIgnore();
+                break;
+            case 22:
+                initEndingCutscene();
+                break;
+            case 23:
+                initCredits();
                 break;
             default: // If an error occurs.
                 running = 0;
