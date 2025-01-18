@@ -14,7 +14,7 @@ void viewItem(int item) {
     switch(item) {
         // Flashlight:
         case 1:
-            if(item1 > 0) { // Only shows the item if the player has it at least once.
+            if(item1 > 0) { // Only displays the item if the player has it at least once.
                 if(languageChosen == 0) {
                     readBetween("assets/lang_en/en_inventory.txt", 1, 2);
                 }else{
@@ -32,7 +32,7 @@ void viewItem(int item) {
 
         // Axe:
         case 2:
-            if(item2 > 0) { // Only shows the item if the player has it at least once.
+            if(item2 > 0) { // Only displays the item if the player has it at least once.
                 if(languageChosen == 0) {
                     readBetween("assets/lang_en/en_inventory.txt", 3, 4);
                 }else{
@@ -50,7 +50,7 @@ void viewItem(int item) {
 
         // Can:
         case 3:
-            if(item3 > 0) { // Only shows the item if the player has it at least once.
+            if(item3 > 0) { // Only displays the item if the player has it at least once.
                 if(languageChosen == 0) {
                     readBetween("assets/lang_en/en_inventory.txt", 5, 6);
                 }else{
@@ -68,7 +68,7 @@ void viewItem(int item) {
         
         // Radio antenna:
         case 4:
-            if(item4 > 0) { // Only shows the item if the player has it at least once.
+            if(item4 > 0) { // Only displays the item if the player has it at least once.
                 if(languageChosen == 0) {
                     readBetween("assets/lang_en/en_inventory.txt", 7, 8);
                 }else{
@@ -84,9 +84,9 @@ void viewItem(int item) {
             }
             break;
         
-        //! To add:
+        // Piece of paper:
         case 5:
-            if(item5 > 0) { // Only shows the item if the player has it at least once.
+            if(item5 > 0) { // Only displays the item if the player has it at least once.
                 if(languageChosen == 0) {
                     readBetween("assets/lang_en/en_inventory.txt", 9, 10);
                 }else{
@@ -101,12 +101,48 @@ void viewItem(int item) {
                 newLine(1);
             }
             break;
+
+        // Electric wire:
+        case 6:
+            if(item6 > 0) { // Only displays the item if the player has it at least once.
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_inventory.txt", 11, 12);
+                }else{
+                    readBetween("assets/lang_fr/fr_inventory.txt", 11, 12);
+                }
+
+                if(languageChosen == 0) { // Displays the quantity of the item:
+                    printf("Quantity: %d", item6);
+                }else{
+                    printf("Quantité : %d", item6);
+                }
+                newLine(1);
+            }
+            break;
+        
+        // Batteries:
+        case 7:
+            if(item7 > 0) { // Only displays the item if the player has it at least once.
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_inventory.txt", 11, 12);
+                }else{
+                    readBetween("assets/lang_fr/fr_inventory.txt", 11, 12);
+                }
+
+                if(languageChosen == 0) { // Displays the quantity of the item:
+                    printf("Quantity: %d", item7);
+                }else{
+                    printf("Quantité : %d", item7);
+                }
+                newLine(1);
+            }
+            break;
     }
 }
 
 // Displays all the items:
 void viewAllItems() {
-    for(int i = 1; i <= 5; i++) {
+    for(int i = 1; i <= 7; i++) {
         viewItem(i);
     }
 }
@@ -130,7 +166,8 @@ void initInventory() {
             case 'b': // Goes back to the last played screen.
                 lastPlayedScreen(lastScreen);
                 break;
-            case 'u': // Uses heal if the player has supplies.
+            case 'h': // Uses heal if the player has supplies.
+                break;
         }
     }while(playerInteract != 'b' && playerInteract != 'u');
 }

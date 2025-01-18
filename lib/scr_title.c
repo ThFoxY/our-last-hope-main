@@ -10,7 +10,7 @@
 
 // Initializes the title screen:
 void initTitleScreen() {
-    int start = 0;
+    int start;
     char input_length[10];
 
     clearScreen();

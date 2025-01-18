@@ -8,14 +8,14 @@
 #include <stdio.h>
 #include "functions.h"
 
-// Check for supplies:
+// Check for materials:
 void initTownMaterials() {
     do{
         clearScreen();
 
         // Items given:
         item2 += 1;
-        item4 += 6;
+        item4 += 5;
 
         currentScreen = 13; // Screen number.
         lastScreen = 3;
@@ -52,6 +52,7 @@ void initTownSupplies() {
 
         // Items given:
         item3 += 1;
+        item2 += 1;
         playerHealth -= 1;
 
         currentScreen = 14; // Screen number.

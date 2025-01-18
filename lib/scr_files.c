@@ -15,12 +15,11 @@
 
 // Variable(s):
 int saveFileChosen; // Holds the save file chosen by the player.
-int item1, item2, item3, item4, item5; // Holds the items.
+int item1, item2, item3, item4, item5, item6, item7; // Holds the items.
 
 // Creates a game file structure to hold save file informations:
 struct game_file {
     char player_name[PLAYER_NAME_MAX_LENGTH];
-    int progress, item1, item2, item3, item4;
 };
 
 // Checks if a save file already exists:

@@ -196,23 +196,69 @@ void initMap() {
             case 'b': // Go back to last screen.
                 lastPlayedScreen(lastScreen);
                 break;
-            case 'f':
-                initForestArea();
-                break;
-            case 't':
-                initTownArea();
-                break;
-            case 'p':
-                initParkArea();
-                break;
-            case 'l':
-                initLakeArea();
-                break;
-            case 'm':
-                initMallArea();
-                break;
+            // Camp:
             case 'c':
                 initCampArea();
+                break;
+            // Forest:
+            case 'f':
+                if(item1 > 0){
+                    if(languageChosen == 0) {
+                        initAreaCutscene("assets/lang_en/en_cutscenes.txt", 10, 12, 2);
+                    }else{
+                        initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 10, 12, 2);
+                    }      
+                }else{
+                    initForestArea();
+                }
+                break;
+            // Town:
+            case 't':
+                if(item2 == 0) { // The player does not have the axe.
+                    if(languageChosen == 0) {
+                        initAreaCutscene("assets/lang_en/en_cutscenes.txt", 1, 3, 3);
+                    }else{
+                        initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 1, 3, 3);
+                    }
+                }else{
+                    initTownArea();
+                }
+                break;
+            case 'l':
+            // Lake:
+                if(item5 == 1 && item1 == 0) {
+                    if(languageChosen == 0) {
+                        initAreaCutscene("assets/lang_en/en_cutscenes.txt", 7, 9, 4);
+                    }else{
+                        initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 7, 9, 4);
+                    }
+                }else{
+                    initLakeArea();
+                }
+                break;
+            case 'p':
+            // Park:
+                if(item2 > 0 && item5 == 0) { // The player has the axe.
+                    if(languageChosen == 0) {
+                        initAreaCutscene("assets/lang_en/en_cutscenes.txt", 4, 6, 5);
+                    }else{
+                        initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 4, 6, 5);
+                    }
+                }else{
+                    initParkArea();
+                }
+                break;
+            case 'm':
+            // Mall:
+                if(item7 > 0) {
+                    if(languageChosen == 0) {
+                        initAreaCutscene("assets/lang_en/en_cutscenes.txt", 13, 15, 6);
+                    }else{
+                        initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 13, 15, 6);
+                    }  
+                }else{
+                    initMallArea();
+                }
                 break;
         }
     }while(playerInteract != 'b' && playerInteract != 'f' && playerInteract != 't' && playerInteract != 'p' && playerInteract != 'l' && playerInteract != 'm' && playerInteract != 'c' );

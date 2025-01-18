@@ -6,7 +6,7 @@
  ❤️❤️🖤
  ❤️🖤🖤
 [=============LIEUX====================================================================================================]
- ◀️ Retour : (b) 🌲 Forêt : (f) 🏙️ Ville : (t) 🌼 Parc : (p) ⛵ Lac : (l) 🏪 Magasin : (m) 🏕️ Camp : (c)
+ ◀️ Retour : (b) 🏕️ Camp : (c) 🌲 Forêt : (f) 🏙️ Ville : (t) 🌼 Parc : (p) ⛵ Lac : (l) 🏪 Magasin : (m)
 [====OBJETS============================================================================================================]
  ◀️ Retour : (b) 🔎 Obj 1 : (1) 🔎 Obj 2 : (2) 🔎 Obj 3 : (3)
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Il fait trop sombre pour y voir quoi que ce soit ! Il faut que je trouve quelque

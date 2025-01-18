@@ -17,6 +17,7 @@
 
 // Variable(s):
 char** map[MAP_ROWS][MAP_COLS];
+int bridgeCrossed;
 
 // Creates a game file structure to hold save file informations:
 struct game_file {
@@ -61,6 +62,7 @@ void initNamingScreen() {
     generateNewMap(map); // Generates a new map.
 
     playerHealth = 3; // Initializes player's health.
+    bridgeCrossed = 0;
 
     // Initializes items:
     item1 = 0;
@@ -68,6 +70,8 @@ void initNamingScreen() {
     item3 = 2;
     item4 = 0;
     item5 = 0;
+    item6 = 0;
+    item7 = 0;
 
     // Uses 'map_info' to save the map:
     char filename[FILE_NAME_MAX_LENGTH];

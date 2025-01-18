@@ -11,101 +11,98 @@
 #define MAP_ROWS 2
 #define MAP_COLS 3
 
-// External values:
+// External variable(s):
+    // --- General ---
 
-    // Retrieves chosen language:
-    extern int languageChosen;
+        extern int languageChosen; // Chosen language.
+        extern int saveFileChosen; // Chosen save file.
+        extern int currentScreen; // Current screen.
+        extern int lastScreen; // Last screen played.
 
-    // Retrieves chosen save file:
-    extern int saveFileChosen;
+    // --- Player ---
+        extern int playerHealth;
+        extern char playerInteract;
 
-    // Retrieves player's current health:
-    extern int playerHealth;
-
-    // Retrieves player's interaction:
-    extern char playerInteract;
-
-    // Retrieves current screen:
-    extern int currentScreen;
-
-    // Retrieves last screen played:
-    extern int lastScreen;
-
-    // Retrieves map:
+    // --- Map ---
     extern char** map[MAP_ROWS][MAP_COLS];
 
-    // Retrieves item 1:
+    // --- Items ---
     extern int item1; // Flashlight.
     extern int item2; // Axe.
     extern int item3; // Can.
     extern int item4; // Radio antenna.
-    extern int item5; // Monitor.
+    extern int item5; // Piece of paper.
+    extern int item6; // Electric wires.
+    extern int item7; // Batteries;
 
 // Mains functions:
-    // game.c
-void gameLoop();
+    // --- Game loop ---
+        void gameLoop();
 
-    // scr_languages.c
-void initLanguageScreen();
+    // --- Screens ---
+        void initLanguageScreen();
+        void initTitleScreen();
+        void initFilesScreen();
+        void initNamingScreen();
+        void initInventory();
+        void initCredits();
 
-    // scr_title.c
-void initTitleScreen();
+    // -- Cutscenes ---
+        void initOpeningCutscene();
+        void initAreaCutscene();
+        void initEndingCutscene();
 
-    // scr_files.c
-void initFilesScreen();
+    // --- Map ---
+        void initMap();
+        void generateNewMap();
+        void saveMap();
+        void loadMap();
 
-    // scr_naming.c
-void initNamingScreen();
+    // --- Areas ---
+        //! area_camp.c
+        void initCampArea();
 
-    // cutsc_opening.c
-void initOpeningCutscene();
+        //! area_forest.c
+        void initForestArea();
+        void initLeftPath();
+        void initRightPath();
+        void initForestHelp();
+        void initForestIgnore();
 
-    // area_campfire.c
-void initCampArea();
+        //! area_town.c
+        void initTownArea();
+        void initTownSupplies();
+        void initTownMaterials();
 
-    // area_forest.c
-void initForestArea();
+        //! area_lake.c
+        void initLakeArea();
+        void initWoodenShed();
 
-    // area_town.c
-void initTownArea();
-void initTownSupplies();
-void initTownMaterials();
+        //! area_park.c
+        void initParkArea();
+        void initParkSupplies();
+        void initParkMaterials();
 
-    // area_lake.c
-void initLakeArea();
-
-    // area_park.c
-void initParkArea();
-
-    // area_mall.c
-void initMallArea();
-
-    // scr_map.c
-void initMap();
-void generateNewMap();
-void saveMap();
-void loadMap();
-
-    // scr_inventory.c
-void initInventory();
+        //! area_mall.c
+        void initMallArea();
 
 // Specific functions:
-    // reading.c
-void readUniqueLine();
-void readBetween();
-void readLines();
+    // --- Reading ---
+    void readUniqueLine();
+    void readBetween();
+    void readLines();
 
-    // screen.c
-void clearScreen();
-void newLine();
-void tab();
-void hudHeader();
-void hudElements();
-void lastPlayedScreen();
+    // --- Printing ---
+    void clearScreen();
+    void newLine();
+    void tab();
+    void hudHeader();
+    void hudElements();
+    void lastPlayedScreen();
 
-    // player.c
-void healthBar();
-void getPlayerName();
-char interactPlayer();
+    // --- Player ---
+    void healthBar();
+    void getPlayerName();
+    char interactPlayer();
 
 #endif // FUNCTIONS_H

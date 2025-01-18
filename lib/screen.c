@@ -43,7 +43,7 @@ void tab(int number) {
     //! This function is use to get back on the right screen, scene or area when looking at the map or in the inventory.
 void lastPlayedScreen(int screen) {
     switch(screen) {
-        // Area:
+        // Camp:
         case 1:
             initCampArea();
             break;
@@ -66,6 +66,14 @@ void lastPlayedScreen(int screen) {
         // Mall:
         case 6:
             initMallArea();
+            break;
+        // Forest (left path):
+        case 7:
+            initLeftPath();
+            break;
+        // Forest (right path):
+        case 8:
+            initRightPath();
             break;
     }
 }
@@ -118,12 +126,18 @@ void hudElements(int screen) {
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 16, 17);
                     }
-                }else{ //! To do.
+                }else if(item2 > 0 && item7 == 0){
                     if(languageChosen == 0) {
-                        readBetween("assets/lang_en/en_hud.txt", 16, 17);
+                        readBetween("assets/lang_en/en_hud.txt", 38, 39);
                     }else{
-                        readBetween("assets/lang_fr/fr_hud.txt", 16, 17);
+                        readBetween("assets/lang_fr/fr_hud.txt", 38, 39);
                     }
+                }else{
+                    if(languageChosen == 0) {
+                        readBetween("assets/lang_en/en_hud.txt", 58, 59);
+                    }else{
+                        readBetween("assets/lang_fr/fr_hud.txt", 58, 59);
+                    } 
                 }
             }
 
@@ -135,12 +149,54 @@ void hudElements(int screen) {
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 12, 13);
                     }
-                }else{ // The player has it.
+                }else if(item1 > 0 && item7 == 0){ // The player has it.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 14, 15);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 14, 15);
                     }
+                }else{ // The player has the flashlight and the batteries:
+                    if(languageChosen == 0) {
+                        readBetween("assets/lang_en/en_hud.txt", 56, 57);
+                    }else{
+                        readBetween("assets/lang_fr/fr_hud.txt", 56, 57);
+                    }
+                }
+            }
+
+            // Left path:
+            if(currentScreen == 18) {
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_hud.txt", 48, 49);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 48, 49);
+                }
+            }
+
+            // Helped the old man:
+            if(currentScreen == 20) {
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_hud.txt", 50, 51);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 50, 51);
+                }
+            }
+
+            // Ignored the old man:
+            if(currentScreen == 21) {
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_hud.txt", 52, 53);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 52, 53);
+                }
+            }
+
+            // Right path:
+            if(currentScreen == 19) {
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_hud.txt", 54, 55);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 54, 55);
                 }
             }
 
@@ -187,34 +243,86 @@ void hudElements(int screen) {
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 18, 19);
                     }
-                }else{ // The player has it.
+                }else if(item2 > 0 && item5 == 0){ // The player has it.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 20, 21);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 20, 21);
                     }
+                }else{ // The player has the code and the axe.
+                    if(languageChosen == 0) {
+                        readBetween("assets/lang_en/en_hud.txt", 42, 43);
+                    }else{
+                        readBetween("assets/lang_fr/fr_hud.txt", 42, 43);
+                    }
+                }
+            }
+
+            // Park materials:
+            if(currentScreen == 15) {
+                if(languageChosen == 0) { // The player chooses to search for materials.
+                    readBetween("assets/lang_en/en_hud.txt", 36, 37);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 36, 37);
+                }
+            }
+
+            // Park supplies:
+            if(currentScreen == 16) {
+                if(languageChosen == 0) { // The player chooses to search for supplies.
+                    readBetween("assets/lang_en/en_hud.txt", 34, 35);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 34, 35);
                 }
             }
 
             // Lake:
             if(currentScreen == 8) {
-                //! To do.
+                if(item5 == 0) { // The player does not have the code.
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 22, 23);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 22, 23);
                     }
+                }else if(item5 > 0 && item1 == 0){ // The player has it.
+                    if(languageChosen == 0) {
+                        readBetween("assets/lang_en/en_hud.txt", 40, 41);
+                    }else{
+                        readBetween("assets/lang_fr/fr_hud.txt", 40, 41);
+                    }
+                }else{ // The player has the code and the flashlight.
+                    if(languageChosen == 0) {
+                        readBetween("assets/lang_en/en_hud.txt", 46, 47);
+                    }else{
+                        readBetween("assets/lang_fr/fr_hud.txt", 46, 47);
+                    }
+                }
+            }
+
+            // Wooden shed:
+            if(currentScreen == 17) {
+                if(languageChosen == 0) {
+                    readBetween("assets/lang_en/en_hud.txt", 44, 45);
+                }else{
+                    readBetween("assets/lang_fr/fr_hud.txt", 44, 45);
+                }             
             }
 
             // Mall:
             if(currentScreen == 10) {
-                //! To do.
+                if(item7 == 0) {
                     if(languageChosen == 0) {
                         readBetween("assets/lang_en/en_hud.txt", 28, 29);
                     }else{
                         readBetween("assets/lang_fr/fr_hud.txt", 28, 29);
                     }
-            }
+                }else{
+                    if(languageChosen == 0) {
+                        readBetween("assets/lang_en/en_hud.txt", 60, 61);
+                    }else{
+                        readBetween("assets/lang_fr/fr_hud.txt", 60, 61);
+                    } 
+                }
             break;
 
         case 2:
@@ -234,5 +342,6 @@ void hudElements(int screen) {
                 readUniqueLine("assets/lang_fr/fr_hud.txt", 11);
             }
             break;
+            }
     }
 }

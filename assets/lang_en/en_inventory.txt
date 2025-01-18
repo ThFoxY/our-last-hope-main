@@ -2,11 +2,15 @@
 Use it to explore dark spaces. Be careful, it might run out of batteries!
 🪓 Axe:
 Use it to damage things. It's very sharp, don't cut yourself.
-🥫 Can:
+🥫 Cans:
 Fresh tomato soup. You could live a thousand years with it!
 📻 Radio antenna:
 It's necessary to have an antenna if you want your radio emitter to work.
-📟 Monitor:
-Could be use for electronic parts.
+🗒️ Piece of paper:
+Digits are written on it: '2731'. Could it be useful?
+🔌 Electric wires:
+If you manage not to tie a knot, it will be used to repair the radio emitter.
+🔋 Batteries:
+Keep them safe to be able to power the radio emitter.
 
 SAFE

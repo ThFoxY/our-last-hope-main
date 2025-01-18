@@ -1,13 +1,19 @@
-Please, choose a language :
+Please, choose a language:
 [0] English | [1] Français
 [1] Start
 =====File 1=====
 =====File 2=====
 =====File 3=====
 New game
-[1] File 1 | [2] File 2 | [3] File 3 : 
-[1] Play | [2] Delete | [3] Back : 
+[1] File 1 | [2] File 2 | [3] File 3: 
+[1] Play | [2] Delete | [3] Back: 
 What do you want to do? 
-Enter a name : 
-[1] Next : 
+Enter a name: 
+[1] Next: 
 Language: 
+To be continued.
+Thanks for playing!
+Made in C in a week by PACE--BOULNOIS Lysandre and MELOCCO David.
+[1] Quit:
+
+SAFE

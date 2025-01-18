@@ -1,35 +1,63 @@
 [============CONTROLS=============][====DIALOG=========================================================================]
  🗺️ Map: (m) 🎒 Inventory: (i)
- 👉 Interact: (e) 💾 Save: (s)
+ 💾 Save: (s)
 [=====HEALTH=====][====================================================================================================]
  ❤️❤️❤️
  ❤️❤️🖤
  ❤️🖤🖤
 [============PLACES====================================================================================================]
- ◀️ Back: (b) 🌲 Forest: (f) 🏙️ Town: (t) 🌼 Park: (p) ⛵ Lake: (l) 🏪 Mall: (m) 🏕️ Camp: (c)
+ ◀️ Back: (b) 🏕️ Camp: (c) 🌲 Forest: (f) 🏙️ Town: (t) 🌼 Park: (p) ⛵ Lake: (l) 🏪 Mall: (m)
 [====ITEMS=============================================================================================================]
- ◀️ Back: (b) 🔎 Item 1: (1) 🔎 Item 2: (2) 🔎 Item 3: (3)
+ ◀️ Back: (b) ❤️ Heal : (h)
  🗺️ Map: (m) 🎒 Inventory: (i)     It's too dark to see anything! I need to find something to light this place up.
- 👉 Interact: (e) 💾 Save: (s)
- 🗺️ Map: (m) 🎒 Inventory: (i)     This is a lot better with some light! This forest should take me to the mall.
- 👉 Interact: (e) 💾 Save: (s)     But I have to be careful.
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     Arriving in the forest, I came accross two different paths:
+ 💾 Save: (s)                      ⬅️ Go left: (<) or ➡️ Go right: (>)
  🗺️ Map: (m) 🎒 Inventory: (i)     Larry gave me two cans of tomato soup. The most interesting place to explore is
- 👉 Interact: (e) 💾 Save: (s)     the mall. I should check my map!
+ 💾 Save: (s)                      the mall. I should check my map!
  🗺️ Map: (m) 🎒 Inventory: (i)     The park is closed. If only I could find something to break the lock.
- 👉 Interact: (e) 💾 Save: (s)
- 🗺️ Map: (m) 🎒 Inventory: (i)     I should be able to break the lock now.
- 👉 Interact: (e) 💾 Save: (s)
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The sun is going down in the distance. It's starting to freeze here.
+ 💾 Save: (s)                      🥫 Find supplies: (<) or 🔩 Find materials: (>)
  🗺️ Map: (m) 🎒 Inventory: (i)     The lake is only accessible from the park. I need to go and look for the park
- 👉 Interact: (e) 💾 Save: (s)     entrance. Fortunately, it's not too far away.
+ 💾 Save: (s)                      entrance. Fortunately, it's not too far away.
  🗺️ Map: (m) 🎒 Inventory: (i)     Even if this place seems already cleared. I might find some useful leftovers :
- 👉 Interact: (e) 💾 Save: (s)     🥫 find Supplies: (<) or 🔩 find Materials: (>)
+ 💾 Save: (s)                      🥫 Find supplies: (<) or 🔩 Fin materials: (>)
  🗺️ Map: (m) 🎒 Inventory: (i)     While checking out the cars, I was able to grab a few materials:
- 👉 Interact: (e) 💾 Save: (s)     +6 📻 Radio antenna | +1 🪓 Axe
+ 💾 Save: (s)                      +5 📻 Radio antennas | +1 🪓 Axe
  🗺️ Map: (m) 🎒 Inventory: (i)     The mall is the perfect place to find materials and supplies, but it's too far
- 👉 Interact: (e) 💾 Save: (s)     away. I have to find another way to get there.
+ 💾 Save: (s)                      away. I have to find another way to get there.
  🗺️ Map: (m) 🎒 Inventory: (i)     I've already been here. It seems there is nothing left. I should check the park.
- 👉 Interact: (e) 💾 Save: (s)
- 🗺️ Map: (m) 🎒 Inventory: (i)     I found a can of tomato soup, but I cut myself opened in the process..
- 👉 Interact: (e) 💾 Save: (s)     +1 🥫 Can | -1 ❤️ Heart
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I found a can of tomato soup and a axe, but I cut myself opened in the process..
+ 💾 Save: (s)                      +1 🥫 Can | +1 🪓 Axe | -1 ❤️ Heart
+ 🗺️ Map: (m) 🎒 Inventory: (i)     A code was written on a piece of paper, along with a can of tomato soup.
+ 💾 Save: (s)                      +1 🥫 Can | +1 🗒️ Piece of paper
+ 🗺️ Map: (m) 🎒 Inventory: (i)     After a few hours, I did not find anything except from a piece of paper.
+ 💾 Save: (s)                      +1 🗒️ Piece of paper
+ 🗺️ Map: (m) 🎒 Inventory: (i)     Feels good to be back to the camp. But I need to keep exploring for more!
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     If only I could get inside this wooden shed to feel warmer..
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I should keep going further. Let's go to the lake.
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I would've died of hypothermia if I didn't crack the code! This is what I found:
+ 💾 Save: (s)                      +3 🔌 Electric wire | +1 🔦 Flashlight.
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I can't stay in this wooden shed any longer. I need to move on!
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I encountered a old man beggin for help, should I help him out?
+ 💾 Save: (s)                      ✅ Help him (<) or ❌ Ignore him: (>)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The old man thanked me and give me some batteries! It can be useful.
+ 💾 Save: (s)                      -1 🥫 Can | +2 🔋 Batteries
+ 🗺️ Map: (m) 🎒 Inventory: (i)     He attacked me and threw batteries at me. He went away with my supplies..
+ 💾 Save: (s)                      -2 🥫 Cans | +2 🔋 Batteries | -2 ❤️ Hearts
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I've found some heal and batteries on the floor. I've head out of the forest.
+ 💾 Save: (s)                      +2 🔋 Batteries | +1 ❤️ Hearts
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The mall is only some miles away. I should be there by night.
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I can't go back to the camp. It's too far away!
+ 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I can't cross this bridge with my backpack or I might fall to my death!
+ 💾 Save: (s)                      🎒 Leave it: (<) or 🎒 Keep it: (>)
 
 SAFE

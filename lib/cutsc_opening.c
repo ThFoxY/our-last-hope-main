@@ -9,72 +9,73 @@
 #include "functions.h"
 
 // Variable(s):
-int currentFrame; // Holds the current displayed frame.
+int currentFrameOpening; // Holds the current displayed frame.
 
 // Plays a specific frame:
     /* filename takes the file path to retrieves the opening text between a start and end line, takes the next frame to display and the image shown */
-void playFrame(const char *filename, int startLine, int endLine, void (*nextFrame)(), const char *image) {
+void playFrameOpening(const char *filename, int startLine, int endLine, void (*nextFrame)(), const char *image) {
     int skip;
+    char input_length[10];
 
-    do{
-        clearScreen();
+    clearScreen();
 
-        // Displays the image along with the text:
-        readLines(image);
-        readBetween(filename, startLine, endLine);
+    // Displays the image along with the text:
+    readLines(image);
+    readBetween(filename, startLine, endLine);
 
-        //
-        if(currentFrame == 3){
-            getPlayerName();
-            printf(".");
+    // Displays player's name on final frame:
+    if(currentFrameOpening == 3){
+        getPlayerName();
+        printf(".");
+    }
+
+    newLine(2);
+
+    if(languageChosen == 0) {
+        readUniqueLine("assets/lang_en/en_strings.txt", 12);
+    }else{
+        readUniqueLine("assets/lang_fr/fr_strings.txt", 12);
+    }
+
+    // Waits for player's input to skip to the next frame:
+    if(fgets(input_length, sizeof(input_length), stdin)) {
+        if(sscanf(input_length, "%d", &skip) != 1 || (skip != 1)) {
+            initOpeningCutscene(); // Restarts the screen if an error occurs.
         }
-
-        newLine(2);
-
-        if(languageChosen == 0) {
-            readUniqueLine("assets/lang_en/en_strings.txt", 12);
-        }else{
-            readUniqueLine("assets/lang_fr/fr_strings.txt", 12);
-        }
-
-        // Waits for player's input to skip to the next frame:
-        scanf("%d", &skip);
-        if(skip == 1 && nextFrame != NULL) {
-            nextFrame();
-        }
-    }while(skip != 1);
+    }
+    nextFrame();
 }
 
 // Frame 3:
-void frame3() {
-    currentFrame = 3;
+void frame3Opening() {
+    currentFrameOpening = 3;
 
     if(languageChosen == 0) {
-        playFrame("assets/lang_en/en_opening.txt", 7, 10, initCampArea, "img/bag.txt");
+        playFrameOpening("assets/lang_en/en_opening.txt", 7, 10, initCampArea, "img/bag.txt");
     }else{
-        playFrame("assets/lang_fr/fr_opening.txt", 7, 10, initCampArea, "img/bag.txt");
+        playFrameOpening("assets/lang_fr/fr_opening.txt", 7, 10, initCampArea, "img/bag.txt");
     }
 }
 
 // Frame 2:
-void frame2() {
-    currentFrame = 2;
+void frame2Opening() {
+    currentFrameOpening = 2;
 
     if(languageChosen == 0) {
-        playFrame("assets/lang_en/en_opening.txt", 4, 6, frame3, "img/radio_emitter.txt");
+        playFrameOpening("assets/lang_en/en_opening.txt", 4, 6, frame3Opening, "img/radio_emitter.txt");
     }else{
-        playFrame("assets/lang_fr/fr_opening.txt", 4, 6, frame3, "img/radio_emitter.txt");
+        playFrameOpening("assets/lang_fr/fr_opening.txt", 4, 6, frame3Opening, "img/radio_emitter.txt");
     }
 }
 
 // Frame 1:
-void frame1() {
-    currentFrame = 1;
+void frame1Opening() {
+    currentFrameOpening = 1;
 
     if(languageChosen == 0) {
-        playFrame("assets/lang_en/en_opening.txt", 1, 3, frame2, "img/bunker.txt");
+        playFrameOpening("assets/lang_en/en_opening.txt", 1, 3, frame2Opening, "img/bunker.txt");
     }else{
-        playFrame("assets/lang_fr/fr_opening.txt", 1, 3, frame2, "img/bunker.txt");
+        playFrameOpening("assets/lang_fr/fr_opening.txt", 1, 3, frame2Opening, "img/bunker.txt");
     }
 }
 
@@ -82,7 +83,7 @@ void frame1() {
 void initOpeningCutscene() {
     clearScreen();
 
-    frame1(); // Starts with the first frame.
+    frame1Opening(); // Starts with the first frame.
 
     gameLoop(5); // Goes to the camp area.
 }
