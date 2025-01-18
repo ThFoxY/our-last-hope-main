@@ -6,7 +6,12 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
+
+// Constant(s):
+#define MAX_ITEMS 7
 
 // Displays an item:
 void viewItem(int item) {
@@ -15,16 +20,12 @@ void viewItem(int item) {
         // Flashlight:
         case 1:
             if(item1 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 1, 2);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 1, 2);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 1, 2);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item1);
+                    printf("Quantity: %d\n", item1);
                 }else{
-                    printf("Quantité : %d", item1);
+                    printf("Quantité : %d\n", item1);
                 }
                 newLine(1);
             }
@@ -33,16 +34,12 @@ void viewItem(int item) {
         // Axe:
         case 2:
             if(item2 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 3, 4);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 3, 4);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 3, 4);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item2);
+                    printf("Quantity: %d\n", item2);
                 }else{
-                    printf("Quantité : %d", item2);
+                    printf("Quantité : %d\n", item2);
                 }
                 newLine(1);
             }
@@ -51,16 +48,12 @@ void viewItem(int item) {
         // Can:
         case 3:
             if(item3 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 5, 6);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 5, 6);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 5, 6);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item3);
+                    printf("Quantity: %d\n", item3);
                 }else{
-                    printf("Quantité : %d", item3);
+                    printf("Quantité : %d\n", item3);
                 }
                 newLine(1);
             }
@@ -69,16 +62,12 @@ void viewItem(int item) {
         // Radio antenna:
         case 4:
             if(item4 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 7, 8);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 7, 8);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 7, 8);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item4);
+                    printf("Quantity: %d\n", item4);
                 }else{
-                    printf("Quantité : %d", item4);
+                    printf("Quantité : %d\n", item4);
                 }
                 newLine(1);
             }
@@ -87,16 +76,12 @@ void viewItem(int item) {
         // Piece of paper:
         case 5:
             if(item5 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 9, 10);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 9, 10);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 9, 10);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item5);
+                    printf("Quantity: %d\n", item5);
                 }else{
-                    printf("Quantité : %d", item5);
+                    printf("Quantité : %d\n", item5);
                 }
                 newLine(1);
             }
@@ -105,16 +90,12 @@ void viewItem(int item) {
         // Electric wire:
         case 6:
             if(item6 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 11, 12);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 11, 12);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 11, 12);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item6);
+                    printf("Quantity: %d\n", item6);
                 }else{
-                    printf("Quantité : %d", item6);
+                    printf("Quantité : %d\n", item6);
                 }
                 newLine(1);
             }
@@ -123,16 +104,12 @@ void viewItem(int item) {
         // Batteries:
         case 7:
             if(item7 > 0) { // Only displays the item if the player has it at least once.
-                if(languageChosen == 0) {
-                    readBetween("assets/lang_en/en_inventory.txt", 11, 12);
-                }else{
-                    readBetween("assets/lang_fr/fr_inventory.txt", 11, 12);
-                }
+                readLanguages("assets/lang_en/en_inventory.txt", "assets/lang_fr/fr_inventory.txt", 13, 14);
 
                 if(languageChosen == 0) { // Displays the quantity of the item:
-                    printf("Quantity: %d", item7);
+                    printf("Quantity: %d\n", item7);
                 }else{
-                    printf("Quantité : %d", item7);
+                    printf("Quantité : %d\n", item7);
                 }
                 newLine(1);
             }
@@ -142,7 +119,7 @@ void viewItem(int item) {
 
 // Displays all the items:
 void viewAllItems() {
-    for(int i = 1; i <= 7; i++) {
+    for(int i = 1; i <= MAX_ITEMS; i++) {
         viewItem(i);
     }
 }
@@ -158,7 +135,7 @@ void initInventory() {
 
         hudHeader(3);
         hudElements(3);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer(); // Waits for player's input.
 
@@ -167,6 +144,8 @@ void initInventory() {
                 lastPlayedScreen(lastScreen);
                 break;
             case 'h': // Uses heal if the player has supplies.
+                useHeal();
+                initInventory();
                 break;
         }
     }while(playerInteract != 'b' && playerInteract != 'u');

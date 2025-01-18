@@ -7,44 +7,79 @@
 // Librairie(s):
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include "functions.h"
 
 // Constant(s):
-#define PLAYER_NAME_MAX_LENGTH 10
-#define FILE_NAME_MAX_LENGTH 20
 #define MAP_ROWS 2
 #define MAP_COLS 3
 
 // Variable(s):
+char playerName[PLAYER_NAME_MAX_LENGTH]; // Holds the player's name.
+int saveProgress; // Holds the save progress.
 char** map[MAP_ROWS][MAP_COLS];
-int bridgeCrossed;
 
-// Creates a game file structure to hold save file informations:
-struct game_file {
-    char player_name[PLAYER_NAME_MAX_LENGTH];
-    int progress, item1, item2, item3, item4;
-};
-
-// Creates a new game file:
+// Creates a new save file:
     /* filename takes the save file path 'save_info' */
 void createNewFile(const char *filename) {
     FILE *file = fopen(filename, "w");
-    struct game_file info;
+    fclose(file);
+}
 
-    if(languageChosen == 0) {
-        readUniqueLine("assets/lang_en/en_strings.txt", 11);
-    }else{
-        readUniqueLine("assets/lang_fr/fr_strings.txt", 11);
-    }
-    scanf("%s", &info.player_name);
+// Saves the save file:
+void saveGame(const char *filename) {
+    FILE *file = fopen(filename, "w");
 
-    fwrite(&info, sizeof(struct game_file), 1, file); // Writes the player's name in the right save file.
+    // Saves the player's name:
+    fprintf(file, "%s\n", playerName);
+
+    // Saves the player's health:
+    fprintf(file, "%d\n", playerHealth);
+
+    // Saves all the items:
+    fprintf(file, "%d %d %d %d %d %d %d\n", item1, item2, item3, item4, item5, item6, item7);
+
+    // Saves the progress:
+    fprintf(file, "%d\n", saveProgress);
+
+    fclose(file);
+}
+
+// Loads the save file:
+void loadGame(const char *filename) {
+    FILE *file = fopen(filename, "r");
+
+    // Reads the player's name:
+    fgets(playerName, PLAYER_NAME_MAX_LENGTH, file);
+
+    // Removes the newline character at the end of the name.
+    size_t len = strlen(playerName);
+    playerName[strcspn(playerName, "\n")] = '\0';
+
+    // Reads the player's health:
+    fscanf(file, "%d", &playerHealth);
+
+    // Reads all items:
+    fscanf(file, "%d %d %d %d %d %d %d\n", &item1, &item2, &item3, &item4, &item5, &item6, &item7);
+
+    // Reads the save progress:
+    fscanf(file, "%d", &saveProgress);
+
     fclose(file);
 }
 
 // Initializes the naming screen:
 void initNamingScreen() {
     clearScreen();
+
+    if(languageChosen == 0) {
+        readLines("img/en_name.txt");  
+    }else{
+        readLines("img/fr_name.txt");
+    }
+
+    newLine(1);
 
     // Creates a new file depending on the save file chosen by the player:
     switch(saveFileChosen) {
@@ -59,25 +94,38 @@ void initNamingScreen() {
             break;
     }
 
-    generateNewMap(map); // Generates a new map.
+    if(languageChosen == 0) {
+        readUniqueLine("assets/lang_en/en_strings.txt", 11);
+    }else{
+        readUniqueLine("assets/lang_fr/fr_strings.txt", 11);
+    }
+    scanf("%s", &playerName);
 
     playerHealth = 3; // Initializes player's health.
-    bridgeCrossed = 0;
 
     // Initializes items:
     item1 = 0;
     item2 = 0;
-    item3 = 2;
+    item3 = 2; // The player starts with 2 cans of tomato soup.
     item4 = 0;
     item5 = 0;
     item6 = 0;
     item7 = 0;
 
-    // Uses 'map_info' to save the map:
-    char filename[FILE_NAME_MAX_LENGTH];
-    snprintf(filename, sizeof(filename), "saves/map_info%d", saveFileChosen);
+    // Initializes the save progress:
+    saveProgress = 0;
 
-    saveMap(map, filename); // Saves the randomly generated map.
+    // Uses 'save_info' to save the player's name, the player's health, all items and save progress:
+    char filename[FILE_NAME_MAX_LENGTH];
+    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+    saveGame(filename);
+
+    generateNewMap(map); // Generates a new map.
+
+    // Uses 'map_info' to save the map:
+    char filename_map[FILE_NAME_MAX_LENGTH];
+    snprintf(filename_map, sizeof(filename_map), "saves/map_info%d", saveFileChosen);
+    saveMap(map, filename_map); // Saves the randomly generated map.
 
     gameLoop(4); // Goes to the opening cutscene.
 }

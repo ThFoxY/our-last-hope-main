@@ -6,7 +6,9 @@
 
 // Librairie(s):
 #include <stdio.h>
-#include "functions.h" // Links external components (functions and variables).
+#include <stdlib.h>
+#include <string.h>
+#include "functions.h"
 
 // Variable(s):
 int languageChosen; // Holds the language chosen by the player (0: English, 1: French).
@@ -29,6 +31,10 @@ int setLanguage() {
 // Initializes the language screen:
 void initLanguageScreen() {
     clearScreen();
+
+    readLines("img/en_language.txt");
+
+    newLine(1);
 
     readUniqueLine("assets/lang_en/en_strings.txt", 1);
     readUniqueLine("assets/lang_en/en_strings.txt", 2);

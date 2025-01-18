@@ -11,3 +11,10 @@ Que voulez-vous faire ?
 Entrez un nom : 
 [1] Suivant : 
 Langage :
+À suivre.. ?
+Merci d'avoir joué !
+Codé en C en une semaine par PACE--BOULNOIS Lysandre et MELOCCO David.
+[1] Quitter
+[1] Retour à l'écran titre
+
+SAFE

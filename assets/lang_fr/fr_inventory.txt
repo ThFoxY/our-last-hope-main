@@ -1,12 +1,16 @@
 🔦 Lampe de poche :
 Éclaire les endroits sombres. Attention, la pile risque de tomber à plat !
 🪓 Hache :
-Permet d'affliger des coups. Sa lame est tranchante, ne te coupes surtout pas.
+Permet d'affliger des coups. Sa lame est tranchante, ne te coupes surtout pas !
 🥫 Conserve :
 De la soupe de tomate fraîche. Vous pourriez vivre mille ans avec !
 📻 Antenne radio :
 Il est nécessaire d'avoir une antenne si vous voulez que votre transmitteur radio fonctionne.
-📟 Écran :
-Peut servir pour récupérer des circuits électroniques.
+🗒️ Morceau de papier :
+Des chiffres y sont inscrits : '2731'. Est-ce que ça pourrait servir à quelque chose ?
+🔌 Fils électriques :
+Si vous arrivez à ne pas en faire des noœuds, ils vont serviront à réparer l'émetteur radio.
+🔋 Piles :
+Mets-les en sécurité pour pouvoir alimenter l'émetteur radio.
 
 SAFE

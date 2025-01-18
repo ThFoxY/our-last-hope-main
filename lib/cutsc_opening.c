@@ -6,6 +6,8 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
 
 // Variable(s):
@@ -51,9 +53,9 @@ void frame3Opening() {
     currentFrameOpening = 3;
 
     if(languageChosen == 0) {
-        playFrameOpening("assets/lang_en/en_opening.txt", 7, 10, initCampArea, "img/bag.txt");
+        playFrameOpening("assets/lang_en/en_opening.txt", 7, 10, initCampArea, "img/player.txt");
     }else{
-        playFrameOpening("assets/lang_fr/fr_opening.txt", 7, 10, initCampArea, "img/bag.txt");
+        playFrameOpening("assets/lang_fr/fr_opening.txt", 7, 10, initCampArea, "img/player.txt");
     }
 }
 
@@ -73,14 +75,16 @@ void frame1Opening() {
     currentFrameOpening = 1;
 
     if(languageChosen == 0) {
-        playFrameOpening("assets/lang_en/en_opening.txt", 1, 3, frame2Opening, "img/bunker.txt");
+        playFrameOpening("assets/lang_en/en_opening.txt", 1, 3, frame2Opening, "img/bomb.txt");
     }else{
-        playFrameOpening("assets/lang_fr/fr_opening.txt", 1, 3, frame2Opening, "img/bunker.txt");
+        playFrameOpening("assets/lang_fr/fr_opening.txt", 1, 3, frame2Opening, "img/bomb.txt");
     }
 }
 
 // Initializes the opening cutscene:
 void initOpeningCutscene() {
+    saveProgress += PROGRESS; // Increases the save progress;
+
     clearScreen();
 
     frame1Opening(); // Starts with the first frame.

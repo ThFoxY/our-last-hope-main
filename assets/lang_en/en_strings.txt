@@ -11,9 +11,10 @@ What do you want to do?
 Enter a name: 
 [1] Next: 
 Language: 
-To be continued.
+To be continued..?
 Thanks for playing!
 Made in C in a week by PACE--BOULNOIS Lysandre and MELOCCO David.
-[1] Quit:
+[1] Quit
+[1] Back to title screen
 
 SAFE

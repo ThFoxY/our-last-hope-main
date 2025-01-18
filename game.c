@@ -6,6 +6,8 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 #include "lib/functions.h"
 
@@ -97,6 +99,9 @@ void gameLoop(int currentScreen) {
             case 23:
                 initCredits();
                 break;
+            case 24:
+                initGameOver();
+                break;
             default: // If an error occurs.
                 running = 0;
                 break;
@@ -106,7 +111,6 @@ void gameLoop(int currentScreen) {
 
 // Starts the game:
 int main(int argc, char *argv[]) {
-
     setlocale(LC_ALL, "");
     
     // Changes the game's window name:
@@ -117,7 +121,7 @@ int main(int argc, char *argv[]) {
         printf("\033]0;Our Last Hope\007");
     #endif
 
-    gameLoop(0); // Goes to the langauge screen.
+    gameLoop(0); // Goes to the language screen.
 
     return 0;
 }

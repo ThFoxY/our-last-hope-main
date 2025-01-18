@@ -6,10 +6,29 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
+
+// Prints out elements relative to the forest:
+void displayForestScreen() {
+    clearScreen();
+
+    currentScreen = 6;
+    lastScreen = 2;
+
+    readLines("img/bg_forest.txt");
+
+    hudHeader(1);
+    hudElements(1);
+    healthBar(playerHealth, 1);
+
+    playerInteract = interactPlayer();
+}
 
 // Helped the old man:
 void initForestHelp() {
+    saveProgress += PROGRESS; // Increases the save progress;
     do{
         clearScreen();
 
@@ -24,7 +43,7 @@ void initForestHelp() {
 
         hudHeader(1);
         hudElements(1);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer();
 
@@ -35,18 +54,18 @@ void initForestHelp() {
             case 'i':
                 gameLoop(12);
                 break;
-            case 'e':
-                // Do something.
-                break;
             case 's':
-                // Do something.
+                char filename[FILE_NAME_MAX_LENGTH];
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                saveGame(filename);
                 break;
         }
-    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
 }
 
 // Ignored the old man:
 void initForestIgnore() {
+    saveProgress += PROGRESS; // Increases the save progress;
     do{
         clearScreen();
 
@@ -62,7 +81,7 @@ void initForestIgnore() {
 
         hudHeader(1);
         hudElements(1);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer();
 
@@ -73,14 +92,13 @@ void initForestIgnore() {
             case 'i':
                 gameLoop(12);
                 break;
-            case 'e':
-                // Do something.
-                break;
             case 's':
-                // Do something.
+                char filename[FILE_NAME_MAX_LENGTH];
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                saveGame(filename);
                 break;
         }
-    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
 }
 
 
@@ -96,7 +114,7 @@ void initLeftPath() {
 
         hudHeader(1);
         hudElements(1);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer();
 
@@ -107,11 +125,10 @@ void initLeftPath() {
             case 'i':
                 gameLoop(12);
                 break;
-            case 'e':
-                // Do something.
-                break;
             case 's':
-                // Do something.
+                char filename[FILE_NAME_MAX_LENGTH];
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                saveGame(filename);
                 break;
             case '<':
                 initForestHelp();
@@ -120,13 +137,18 @@ void initLeftPath() {
                 initForestIgnore();
                 break;
         }
-    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
 }
 
 // Went right path:
 void initRightPath() {
+    saveProgress += PROGRESS; // Increases the save progress;
     do{
         clearScreen();
+
+        // Items given:
+        item7 += 2;
+        playerHealth += 1;
 
         currentScreen = 19; // Screen number.
         lastScreen = 8;
@@ -135,7 +157,7 @@ void initRightPath() {
 
         hudHeader(1);
         hudElements(1);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer();
 
@@ -146,14 +168,13 @@ void initRightPath() {
             case 'i':
                 gameLoop(12);
                 break;
-            case 'e':
-                // Do something.
-                break;
             case 's':
-                // Do something.
+                char filename[FILE_NAME_MAX_LENGTH];
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                saveGame(filename);
                 break;
         }
-    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
 }
 
 // Initializes the forest area:
@@ -161,19 +182,7 @@ void initForestArea() {
     // Has not found the flashlight:
     if(item1 == 0 || item7 > 0) {
         do{
-            clearScreen();
-
-            currentScreen = 6; // Screen number.
-            lastScreen = 2;
-            
-            readLines("img/bg_forest.txt"); // Shows the backdrop image.
-
-            hudHeader(1);
-            hudElements(1);
-            healthBar(playerHealth);
-
-            playerInteract = interactPlayer();
-
+            displayForestScreen();
             switch(playerInteract) {
                 case 'm':
                     gameLoop(11);
@@ -181,32 +190,19 @@ void initForestArea() {
                 case 'i':
                     gameLoop(12);
                     break;
-                case 'e':
-                    // Do something.
-                    break;
                 case 's':
-                    // Do something.
+                    char filename[FILE_NAME_MAX_LENGTH];
+                    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                    saveGame(filename);
                     break;
             }
-        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
     }
 
     // Has found the flashlight:
     if(item1 > 0 && item7 == 0) {
         do{
-            clearScreen();
-
-            currentScreen = 6; // Screen number.
-            lastScreen = 2;
-            
-            readLines("img/bg_forest.txt"); // Shows the backdrop image.
-
-            hudHeader(1);
-            hudElements(1);
-            healthBar(playerHealth);
-
-            playerInteract = interactPlayer();
-
+            displayForestScreen();
             switch(playerInteract) {
                 case 'm':
                     gameLoop(11);
@@ -214,11 +210,10 @@ void initForestArea() {
                 case 'i':
                     gameLoop(12);
                     break;
-                case 'e':
-                    // Do something.
-                    break;
                 case 's':
-                    // Do something.
+                    char filename[FILE_NAME_MAX_LENGTH];
+                    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                    saveGame(filename);
                     break;
                 case '<':
                     initLeftPath();
@@ -227,6 +222,6 @@ void initForestArea() {
                     initRightPath();
                     break;
             }
-        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
     }
 }

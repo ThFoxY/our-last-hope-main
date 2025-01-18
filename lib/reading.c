@@ -6,10 +6,11 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
 
 // Constant(s):
-#define FILE_NAME_MAX_LENGTH 20
 #define MAX_LINE_LENGTH 1024
 
 // Variable(s):
@@ -68,4 +69,21 @@ void readLines(const char *filename) {
         printf("%s", max_char);
     }
     fclose(file);
+}
+
+// Reads a line or a set of lines depending on the language chosen:
+void readLanguages(const char *en_file, const char *fr_file, int startLine, int endLine) {
+        if (languageChosen == 0) {
+        if (startLine == endLine) {
+            readUniqueLine(en_file, startLine);
+        } else {
+            readBetween(en_file, startLine, endLine);
+        }
+    } else {
+        if (startLine == endLine) {
+            readUniqueLine(fr_file, startLine);
+        } else {
+            readBetween(fr_file, startLine, endLine);
+        }
+    }
 }

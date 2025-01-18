@@ -37,23 +37,23 @@
  💾 Save: (s)                      +1 🗒️ Piece of paper
  🗺️ Map: (m) 🎒 Inventory: (i)     Feels good to be back to the camp. But I need to keep exploring for more!
  💾 Save: (s)
- 🗺️ Map: (m) 🎒 Inventory: (i)     If only I could get inside this wooden shed to feel warmer..
- 💾 Save: (s)
+ 🗺️ Map: (m) 🎒 Inventory: (i)     If only I could get inside this wooden shed to warm myself up.. I need to enter
+ 💾 Save: (s)                      the right code.
  🗺️ Map: (m) 🎒 Inventory: (i)     I should keep going further. Let's go to the lake.
  💾 Save: (s)
  🗺️ Map: (m) 🎒 Inventory: (i)     I would've died of hypothermia if I didn't crack the code! This is what I found:
  💾 Save: (s)                      +3 🔌 Electric wire | +1 🔦 Flashlight.
  🗺️ Map: (m) 🎒 Inventory: (i)     I can't stay in this wooden shed any longer. I need to move on!
  💾 Save: (s)
- 🗺️ Map: (m) 🎒 Inventory: (i)     I encountered a old man beggin for help, should I help him out?
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I've met a old man begging for help, should I help him?
  💾 Save: (s)                      ✅ Help him (<) or ❌ Ignore him: (>)
  🗺️ Map: (m) 🎒 Inventory: (i)     The old man thanked me and give me some batteries! It can be useful.
  💾 Save: (s)                      -1 🥫 Can | +2 🔋 Batteries
  🗺️ Map: (m) 🎒 Inventory: (i)     He attacked me and threw batteries at me. He went away with my supplies..
  💾 Save: (s)                      -2 🥫 Cans | +2 🔋 Batteries | -2 ❤️ Hearts
- 🗺️ Map: (m) 🎒 Inventory: (i)     I've found some heal and batteries on the floor. I've head out of the forest.
+ 🗺️ Map: (m) 🎒 Inventory: (i)     I found some heal and batteries on the ground. I got out of the forest.
  💾 Save: (s)                      +2 🔋 Batteries | +1 ❤️ Hearts
- 🗺️ Map: (m) 🎒 Inventory: (i)     The mall is only some miles away. I should be there by night.
+ 🗺️ Map: (m) 🎒 Inventory: (i)     The mall is only a few miles away. I should be there by night.
  💾 Save: (s)
  🗺️ Map: (m) 🎒 Inventory: (i)     I can't go back to the camp. It's too far away!
  💾 Save: (s)

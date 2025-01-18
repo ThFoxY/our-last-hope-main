@@ -6,21 +6,20 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
+#include <unistd.h>
 #include "functions.h"
 
 // Constant(s):
 #define PLAYER_NAME_MAX_LENGTH 12
 #define FILE_NAME_MAX_LENGTH 24
+#define PROGRESS 10
 
 // Variable(s):
 int saveFileChosen; // Holds the save file chosen by the player.
 int item1, item2, item3, item4, item5, item6, item7; // Holds the items.
-
-// Creates a game file structure to hold save file informations:
-struct game_file {
-    char player_name[PLAYER_NAME_MAX_LENGTH];
-};
 
 // Checks if a save file already exists:
 bool checkSaveFileExists(int slot) {
@@ -43,25 +42,28 @@ void showSaveFile(int slot){
     snprintf(filename, sizeof(filename), "saves/save_info%d", slot);
     FILE *file = fopen(filename, "r");
 
-    char line[PLAYER_NAME_MAX_LENGTH];
-
-    struct game_file info;
-
     if(languageChosen == 0) {
         readUniqueLine("assets/lang_en/en_strings.txt", 3 + slot);
     }else{
         readUniqueLine("assets/lang_fr/fr_strings.txt", 3 + slot);
     }
 
-    if(checkSaveFileExists(slot)) { // If a save file does exist, search for the first its first line (player's name).
-        if(fgets(line, sizeof(line), file) != NULL) { //! To fix.
-            sscanf(line, "%s", info.player_name); //! To fix.
-            if(languageChosen == 0) {
-                printf("Name: %s\n", info.player_name);
-            }else{
-                printf("Nom : %s\n", info.player_name);
-            }
+    if(checkSaveFileExists(slot)) { // If a save file does exist, search for the player's name.
+        // Displays the player's name:
+        fgets(playerName, PLAYER_NAME_MAX_LENGTH, file);
+        playerName[strcspn(playerName, "\n")] = '\0';
+
+        if(languageChosen == 0) {
+            printf("Name: %s\n", playerName);
+        }else{
+            printf("Nom : %s\n", playerName);
         }
+
+        // Displays the player's health:
+        if(fscanf(file, "%d", &playerHealth) == 1) {
+            healthBar(playerHealth, 0);
+        }
+
     }else{ // If it does not, displays a empty save file.
         if(languageChosen == 0) {
             readUniqueLine("assets/lang_en/en_strings.txt", 7);
@@ -69,6 +71,7 @@ void showSaveFile(int slot){
             readUniqueLine("assets/lang_fr/fr_strings.txt", 7);
         }
     }
+    newLine(2);
 }
 
 // Displays all save files:
@@ -131,9 +134,13 @@ void handlingSaveFile() {
             }else{
                 // Loads the save file:
                 char filename[FILE_NAME_MAX_LENGTH];
-                snprintf(filename, sizeof(filename), "saves/map_info%d", saveFileChosen);
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                loadGame(filename);
 
-                loadMap(map, filename); // Loads the map.
+                char filename_map[FILE_NAME_MAX_LENGTH];
+                snprintf(filename_map, sizeof(filename_map), "saves/map_info%d", saveFileChosen);
+
+                loadMap(map, filename_map); // Loads the map.
 
                 gameLoop(5); // Goes to the camp area.
             }
@@ -153,6 +160,14 @@ void handlingSaveFile() {
 // Initializes the files screen:
 void initFilesScreen() {
     clearScreen();
+
+    if(languageChosen == 0) {
+        readLines("img/en_saves.txt");  
+    }else{
+        readLines("img/fr_saves.txt");
+    }
+
+    newLine(1);
 
     showAllSaveFiles();
 

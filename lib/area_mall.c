@@ -6,26 +6,32 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
+
+// Prints out elements relative to the mall:
+void displayMallScreen() {
+    clearScreen();
+
+    currentScreen = 10;
+    lastScreen = 6;
+
+    readLines("img/bg_mall.txt");
+
+    hudHeader(1);
+    hudElements(1);
+    healthBar(playerHealth, 1);
+
+    playerInteract = interactPlayer();
+}
 
 // Initializes the mall area:
 void initMallArea() {
     // Has not found the batteries:
     if(item7 == 0){
         do{
-            clearScreen();
-
-            currentScreen = 10; // Screen number;
-            lastScreen = 6;
-            
-            readLines("img/bg_mall.txt"); // Shows the backdrop image.
-
-            hudHeader(1);
-            hudElements(1);
-            healthBar(playerHealth);
-
-            playerInteract = interactPlayer();
-
+            displayMallScreen();
             switch(playerInteract) {
                 case 'm':
                     gameLoop(11);
@@ -33,32 +39,19 @@ void initMallArea() {
                 case 'i':
                     gameLoop(12);
                     break;
-                case 'e':
-                    // Do something.
-                    break;
                 case 's':
-                    // Do something.
+                    char filename[FILE_NAME_MAX_LENGTH];
+                    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                    saveGame(filename);
                     break;
             }
-        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
     }
 
     // Has found the batteries:
     if(item7 > 0){
         do{
-            clearScreen();
-
-            currentScreen = 10; // Screen number;
-            lastScreen = 6;
-            
-            readLines("img/bg_mall.txt"); // Shows the backdrop image.
-
-            hudHeader(1);
-            hudElements(1);
-            healthBar(playerHealth);
-
-            playerInteract = interactPlayer();
-
+            displayMallScreen();
             switch(playerInteract) {
                 case 'm':
                     gameLoop(11);
@@ -66,19 +59,18 @@ void initMallArea() {
                 case 'i':
                     gameLoop(12);
                     break;
-                case 'e':
-                    // Do something.
-                    break;
                 case 's':
-                    // Do something.
+                    char filename[FILE_NAME_MAX_LENGTH];
+                    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                    saveGame(filename);
                     break;
                 case '<':
                     gameLoop(22);
                     break;
                 case '>':
-                    //! Game over.
+                    gameLoop(24);
                     break;
             }
-        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
     }
 }

@@ -6,6 +6,8 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
 
 // Variable(s):
@@ -13,14 +15,13 @@ int currentFrameEnding; // Holds the current displayed frame.
 
 // Plays a specific frame:
     /* filename takes the file path to retrieves the opening text between a start and end line, takes the next frame to display and the image shown */
-void playFrameEnding(const char *filename, int startLine, int endLine, void (*nextFrame)(), const char *image) {
+void playFrameEnding(const char *filename, int startLine, int endLine, void (*nextFrame)()) {
     int skip;
     char input_length[10];
 
     clearScreen();
 
-    // Displays the image along with the text:
-    readLines(image);
+    // Displays the text:
     readBetween(filename, startLine, endLine);
 
     if(languageChosen == 0) {
@@ -43,9 +44,9 @@ void frame5Ending() {
     currentFrameEnding = 5;
 
     if(languageChosen == 0) {
-        playFrameEnding("assets/lang_en/en_ending.txt", 13, 24, initCredits, "img/bag.txt");
+        playFrameEnding("assets/lang_en/en_ending.txt", 13, 24, initCredits);
     }else{
-        playFrameEnding("assets/lang_fr/fr_ending.txt", 13, 24, initCredits, "img/bag.txt");
+        playFrameEnding("assets/lang_fr/fr_ending.txt", 13, 24, initCredits);
     }
 }
 
@@ -54,9 +55,9 @@ void frame4Ending() {
     currentFrameEnding = 4;
 
     if(languageChosen == 0) {
-        playFrameEnding("assets/lang_en/en_ending.txt", 10, 12, frame5Ending, "img/bag.txt");
+        playFrameEnding("assets/lang_en/en_ending.txt", 10, 12, frame5Ending);
     }else{
-        playFrameEnding("assets/lang_fr/fr_ending.txt", 10, 12, frame5Ending, "img/bag.txt");
+        playFrameEnding("assets/lang_fr/fr_ending.txt", 10, 12, frame5Ending);
     }
 }
 
@@ -65,9 +66,9 @@ void frame3Ending() {
     currentFrameEnding = 3;
 
     if(languageChosen == 0) {
-        playFrameEnding("assets/lang_en/en_ending.txt", 7, 9, frame4Ending, "img/bag.txt");
+        playFrameEnding("assets/lang_en/en_ending.txt", 7, 9, frame4Ending);
     }else{
-        playFrameEnding("assets/lang_fr/fr_ending.txt", 7, 9, frame4Ending, "img/bag.txt");
+        playFrameEnding("assets/lang_fr/fr_ending.txt", 7, 9, frame4Ending);
     }
 }
 
@@ -76,9 +77,9 @@ void frame2Ending() {
     currentFrameEnding = 2;
 
     if(languageChosen == 0) {
-        playFrameEnding("assets/lang_en/en_ending.txt", 4, 6, frame3Ending, "img/radio_emitter.txt");
+        playFrameEnding("assets/lang_en/en_ending.txt", 4, 6, frame3Ending);
     }else{
-        playFrameEnding("assets/lang_fr/fr_ending.txt", 4, 6, frame3Ending, "img/radio_emitter.txt");
+        playFrameEnding("assets/lang_fr/fr_ending.txt", 4, 6, frame3Ending);
     }
 }
 
@@ -87,14 +88,16 @@ void frame1Ending() {
     currentFrameEnding = 1;
 
     if(languageChosen == 0) {
-        playFrameEnding("assets/lang_en/en_ending.txt", 1, 3, frame2Ending, "img/bunker.txt");
+        playFrameEnding("assets/lang_en/en_ending.txt", 1, 3, frame2Ending);
     }else{
-        playFrameEnding("assets/lang_fr/fr_ending.txt", 1, 3, frame2Ending, "img/bunker.txt");
+        playFrameEnding("assets/lang_fr/fr_ending.txt", 1, 3, frame2Ending);
     }
 }
 
 // Initializes the opening cutscene:
 void initEndingCutscene() {
+    saveProgress += PROGRESS; // Increases the save progress;
+    
     clearScreen();
 
     frame1Ending(); // Starts with the first frame.

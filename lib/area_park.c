@@ -6,10 +6,29 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
+
+// Prints out elements relative to the park:
+void displayParkScreen() {
+    clearScreen();
+
+    currentScreen = 9;
+    lastScreen = 5;
+
+    readLines("img/bg_park.txt");
+
+    hudHeader(1);
+    hudElements(1);
+    healthBar(playerHealth, 1);
+
+    playerInteract = interactPlayer();
+}
 
 // Check for materials:
 void initParkMaterials() {
+    saveProgress += PROGRESS; // Increases the save progress;
     do{
         clearScreen();
 
@@ -23,7 +42,7 @@ void initParkMaterials() {
 
         hudHeader(1);
         hudElements(1);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer();
 
@@ -34,18 +53,18 @@ void initParkMaterials() {
             case 'i':
                 initInventory();
                 break;
-            case 'e':
-                // Do something.
-                break;
             case 's':
-                // Do something.
+                char filename[FILE_NAME_MAX_LENGTH];
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                saveGame(filename);
                 break;
         }
-    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
 }
 
 // Check for supplies:
 void initParkSupplies() {
+    saveProgress += PROGRESS; // Increases the save progress;
     do{
         clearScreen();
 
@@ -60,7 +79,7 @@ void initParkSupplies() {
 
         hudHeader(1);
         hudElements(1);
-        healthBar(playerHealth);
+        healthBar(playerHealth, 1);
 
         playerInteract = interactPlayer();
 
@@ -71,14 +90,13 @@ void initParkSupplies() {
             case 'i':
                 gameLoop(12);
                 break;
-            case 'e':
-                // Do something.
-                break;
             case 's':
-                // Do something.
+                char filename[FILE_NAME_MAX_LENGTH];
+                snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                saveGame(filename);
                 break;
         }
-    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+    }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
 }
 
 // Initializes the park area:
@@ -86,19 +104,7 @@ void initParkArea() {
     // Has not checked the park:
     if(item5 == 0 && item2 > 0) { // The player does not have the code, but has the axe.
         do{
-            clearScreen();
-
-            currentScreen = 9; // Screen number.
-            lastScreen = 5;
-            
-            readLines("img/bg_park.txt"); // Shows the backdrop image.
-
-            hudHeader(1);
-            hudElements(1);
-            healthBar(playerHealth);
-
-            playerInteract = interactPlayer();
-
+            displayParkScreen();
             switch(playerInteract) {
                 case 'm':
                     gameLoop(11);
@@ -106,11 +112,10 @@ void initParkArea() {
                 case 'i':
                     gameLoop(12);
                     break;
-                case 'e':
-                    // Do something.
-                    break;
                 case 's':
-                    // Do something.
+                    char filename[FILE_NAME_MAX_LENGTH];
+                    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                    saveGame(filename);
                     break;
                 case '<':
                     initParkSupplies();
@@ -119,25 +124,13 @@ void initParkArea() {
                     initParkMaterials();
                     break;   
             }
-        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's' && playerInteract != '<' && playerInteract != '>');
     }
 
     // Has checked the park:
     if(item5 > 0 || item2 == 0) { // Has it.
         do{
-            clearScreen();
-
-            currentScreen = 9; // Screen number.
-            lastScreen = 5;
-            
-            readLines("img/bg_park.txt"); // Shows the backdrop image.
-
-            hudHeader(1);
-            hudElements(1);
-            healthBar(playerHealth);
-
-            playerInteract = interactPlayer();
-
+            displayParkScreen();
             switch(playerInteract) {
                 case 'm':
                     gameLoop(11);
@@ -145,13 +138,12 @@ void initParkArea() {
                 case 'i':
                     gameLoop(12);
                     break;
-                case 'e':
-                    // Do something.
-                    break;
                 case 's':
-                    // Do something.
+                    char filename[FILE_NAME_MAX_LENGTH];
+                    snprintf(filename, sizeof(filename), "saves/save_info%d", saveFileChosen);
+                    saveGame(filename);
                     break;
             }
-        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 'e' && playerInteract != 's');
+        }while(playerInteract != 'm' && playerInteract != 'i' && playerInteract != 's');
     }
 }

@@ -7,11 +7,11 @@
 // Librairie(s):
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include "functions.h"
 
 // Constant(s):
-#define FILE_NAME_MAX_LENGTH 20
 #define TILE_WIDTH 40
 #define TILE_HEIGHT 8
 #define TILE_TYPES_COUNT 6
@@ -19,34 +19,34 @@
 // Tiles:
 char* TILE_TOWN[TILE_HEIGHT] = {
     "........................................",
-    ".                                      .",
-    ".       ^    #####     ^               .",
-    ".            #0#0#           #####  ^  .",
-    ".    #####   ##/##  ^        #0#0#     .",
-    ". ^  #0#0#               ^   ##/##     .",
-    ".    ##/##     ^                   ^   .",
+    ".       ^                              .",
+    ".  ^    |    #####     ^               .",
+    ".  |         #0#0#     |     #####   ^ .",
+    ".    #####   ##/##  ^        #0#0#   | .",
+    ". ^  #0#0#          |    ^   ##/##     .",
+    ". |  ##/##               |             .",
     "........................................"
 };
 
 char* TILE_MALL[TILE_HEIGHT] = {
     "........................................",
-    ".                                      .",
-    ".       ^    ########################  .",
-    ".   ^        ########################  .",
-    ".         ^  ##0000###000000###0000##  .",
-    ". ^          ##0000###00//00###0000##  .",
-    ".     ^                                .",
+    ".          ^                           .",
+    ".       ^  |       ############        .",
+    ".   ^   |    ########################  .",
+    ". ^ |     ^  ##0000###000000###0000##  .",
+    ". |    ^  |  ##0000###00//00###0000##  .",
+    ".      |                               .",
     "........................................"
 };
 
 char* TILE_PARK[TILE_HEIGHT] = {
     "........................................",
-    ".                                      .",
-    ".        ^          ^     ^     o  ^   .",
-    ".   ^    |    o  ^  |     |   ^    |   .",
-    ".   |     ^      |            |        .",
-    ".         |   ^    ^   o   ^     ^     .",
-    ".     o       |    |       |     |     .",
+    ".         ^          ^                 .",
+    ".   ^     |    o     |     ^  ^  o     .",
+    ".   |   ___     _---__     |  |        .",
+    ". ___---   --___      -___        ___- .",
+    ".       o     ^    ^      --___---     .",
+    ".             |    |               o   .",
     "........................................"
 };
 
@@ -76,7 +76,7 @@ char* TILE_CAMP[TILE_HEIGHT] = {
     "........................................",
     ". CAMP                                 .",
     ".       ^   ^   #     ^        ^    ^  .",
-    ".    ^  | ^ |  # # o  |     ^  |    |  .",
+    ".    ^  | ^ |  #*# o  |     ^  |    |  .",
     ".  ^ |    | ^   #         ^ | ^   ^    .",
     ".  |   ^    | ^     o  ^  |   |   |^   .",
     ".      |      |  o     |           |   .",
@@ -198,7 +198,7 @@ void initMap() {
                 break;
             // Camp:
             case 'c':
-                initCampArea();
+                gameLoop(5);
                 break;
             // Forest:
             case 'f':
@@ -209,7 +209,7 @@ void initMap() {
                         initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 10, 12, 2);
                     }      
                 }else{
-                    initForestArea();
+                    gameLoop(6);
                 }
                 break;
             // Town:
@@ -221,7 +221,7 @@ void initMap() {
                         initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 1, 3, 3);
                     }
                 }else{
-                    initTownArea();
+                    gameLoop(7);
                 }
                 break;
             case 'l':
@@ -233,7 +233,7 @@ void initMap() {
                         initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 7, 9, 4);
                     }
                 }else{
-                    initLakeArea();
+                    gameLoop(8);
                 }
                 break;
             case 'p':
@@ -245,7 +245,7 @@ void initMap() {
                         initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 4, 6, 5);
                     }
                 }else{
-                    initParkArea();
+                    gameLoop(9);
                 }
                 break;
             case 'm':
@@ -257,7 +257,7 @@ void initMap() {
                         initAreaCutscene("assets/lang_fr/fr_cutscenes.txt", 13, 15, 6);
                     }  
                 }else{
-                    initMallArea();
+                    gameLoop(10);
                 }
                 break;
         }

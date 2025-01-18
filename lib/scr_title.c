@@ -6,6 +6,8 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
 
 // Initializes the title screen:
@@ -16,7 +18,16 @@ void initTitleScreen() {
     clearScreen();
 
     readLines("img/title.txt"); // Displays the title.
-    newLine(2);
+
+    newLine(1);
+
+    if(languageChosen == 0) {
+        readUniqueLine("assets/lang_en/en_strings.txt", 16);
+    }else{
+        readUniqueLine("assets/lang_fr/fr_strings.txt", 16);
+    }
+
+    newLine(4);
 
     if(languageChosen == 0) {
         readUniqueLine("assets/lang_en/en_strings.txt", 3);

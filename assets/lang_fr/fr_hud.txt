@@ -1,6 +1,6 @@
 [=============CONTRÔLES=============][====DIALOGUE=====================================================================]
  🗺️ Carte : (m) 🎒 Inventaire : (i)                                                                                     
- 👉 Interagir : (e) 💾 Sauver : (s)                                                                                    
+ 💾 Sauver : (s)                                                                                    
 [=====VIE=====][=======================================================================================================]
  ❤️❤️❤️
  ❤️❤️🖤
@@ -8,28 +8,56 @@
 [=============LIEUX====================================================================================================]
  ◀️ Retour : (b) 🏕️ Camp : (c) 🌲 Forêt : (f) 🏙️ Ville : (t) 🌼 Parc : (p) ⛵ Lac : (l) 🏪 Magasin : (m)
 [====OBJETS============================================================================================================]
- ◀️ Retour : (b) 🔎 Obj 1 : (1) 🔎 Obj 2 : (2) 🔎 Obj 3 : (3)
+ ◀️ Retour : (b) ❤️ Soigner : (h)
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Il fait trop sombre pour y voir quoi que ce soit ! Il faut que je trouve quelque
- 👉 Interagir : (e) 💾 Sauver : (s)  chose pour éclairer cet endroit.
- 🗺️ Carte : (m) 🎒 Inventaire : (i)  C'est beaucoup mieux avec un peu de lumière. Cette forêt devrait me mener au
- 👉 Interagir : (e) 💾 Sauver : (s)  centre commercial. Je dois rester prudent.
+ 💾 Sauver : (s)                     chose pour éclairer cet endroit.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  En arrivant dans la forêt, j'ai croisé deux chemins différents :
+ 💾 Sauver : (s)                     ⬅️ Aller à gauche : (<) ou ➡️ Aller à droite : (>)
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Larry m'a donné deux conserves de soupe à la tomate. Le centre commercial est
- 👉 Interagir : (e) 💾 Sauver : (s)  l'endroit le plus intéressant à explorer. Je devrais regarder ma carte !
+ 💾 Sauver : (s)                     l'endroit le plus intéressant à explorer. Je devrais regarder ma carte !
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Le parc est fermé. Si seulement je pouvais trouver quelque chose pour briser
- 👉 Interagir : (e) 💾 Sauver : (s)  le verrou.
- 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je devrais pouvoir faire sauter le verrou maintenant.
- 👉 Interagir : (e) 💾 Sauver : (s)
+ 💾 Sauver : (s)  le verrou.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Le soleil se couche à l'horizon. Il commence à faire vraiment froid.
+ 💾 Sauver : (s)                     🥫 Chercher des vivres : (<) ou 🔩 Chercher des matériaux : (>)
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Le lac n'est accessible que depuis le parc. Je dois aller vérifier
- 👉 Interagir : (e) 💾 Sauver : (s)  l'entrée du parc. Heureusement, ce n'est pas si loin d'ici.
+ 💾 Sauver : (s)                     l'entrée du parc. Heureusement, ce n'est pas si loin d'ici.
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Même si cet endroit semble dégagé. Je pourrais trouver quelques restes utiles
- 👉 Interagir : (e) 💾 Sauver : (s)  🥫 chercher des Vivres : (<) ou 🔩 chercher des Matériaux : (>)
+ 💾 Sauver : (s)                     🥫 Chercher des Vivres : (<) ou 🔩 Chercher des Matériaux : (>)
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Pendant que je vérifiais les voitures, j'ai pu récupérer quelques matériaux :
- 👉 Interagir : (e) 💾 Sauver : (s)  +6 📻 Antenne radio | +1 🪓 Hache
+ 💾 Sauver : (s)                     +5 📻 Antenne radio | +1 🪓 Hache
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Le centre commercial est l'endroit idéal pour trouver des ressources, mais il
- 👉 Interagir : (e) 💾 Sauver : (s)  est très éloigné. Je dois trouver un autre moyen d'y parvenir.
+ 💾 Sauver : (s)                      est très éloigné. Je dois trouver un autre moyen d'y parvenir.
  🗺️ Carte : (m) 🎒 Inventaire : (i)  Je suis déjà passé par ici. Il n'y a plus rien à prendre. Je devrais aller voir
- 👉 Interagir : (e) 💾 Sauver : (s)  le parc.
+ 💾 Sauver : (s)                     le parc.
  🗺️ Carte : (m) 🎒 Inventaire : (i)  En cherchant une conserve, je me suis coupé.
- 👉 Interagir : (e) 💾 Sauver : (s)  +1 🥫 Conserve | -1 ❤️ Cœur
+ 💾 Sauver : (s)                     +1 🥫 Conserve | +1 🪓 Hache | -1 ❤️ Cœur
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Un code est inscrit sur le morceau de papier, ainsi qu'une boîte de soupe.
+ 💾 Sauver : (s)                     +1 🥫 Conserve | +1 🗒️ Morceau de papier
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Après quelques heures, je n'ai rien trouvé sauf un morceau de papier.
+ 💾 Sauver : (s)                     +1 🗒️ Morceau de papier
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  C'est bien de revenir au camp, mais je dois continuer d'explorer !
+ 💾 Sauver : (s)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Si seulement je pouvais rentrer dans cette cabane pour me réchauffer..
+ 💾 Sauver : (s)                     Je dois rentrer le bon code.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je devrais continuer ma route. Direction le lac.
+ 💾 Sauver : (s)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je serais mort d'hypothermie si je n'avais pas entré le bon code. J'ai trouvé :
+ 💾 Sauver : (s)                     +3 🔌 Fils électriques | +1 🔦 Lampe de poche.
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je ne peux pas rester plus longtemps ici. Je dois poursuivre ma route !
+ 💾 Sauver : (s)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  J'ai rencontré un vieil homme demandant mon aide. Devrais-je l'aider ?
+ 💾 Sauver : (s)                     ✅ L'aider : (<) ou ❌ L'ignorer : (>)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Le vieil homme m'a gentiment remercié et m'a donné des piles. Cela peut servir.
+ 💾 Sauver : (s)                     -1 🥫 Conserve | +2 🔋 Piles
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Il m'a attaqué en me jetant des piles et est parti avec mes provisions.
+ 💾 Sauver : (s)                     -2 🥫 Conserves | +2 🔋 Piles | -2 ❤️ Cœurs
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  J'ai trouvé du soin et des piles sur le sol. Je suis sorti de la forêt.
+ 💾 Sauver : (s)                     +2 🔋 Piles | +1 ❤️ Cœur
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Le centre commercial est à quelques kilomètres. Je devrais y être avant la nuit.
+ 💾 Sauver : (s)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je ne peux plus rentrer au camp, c'est trop loin désormais !
+ 💾 Sauver : (s)
+ 🗺️ Carte : (m) 🎒 Inventaire : (i)  Je ne peux pas traverser ce pont avec mon sac à dos, sinon je tomberai !
+ 💾 Sauver : (s)                     🎒 Le garder : (<) ou 🎒 Le lâcher : (>)
 
 SAFE

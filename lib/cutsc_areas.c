@@ -6,6 +6,8 @@
 
 // Librairie(s):
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
 
 // Skip the cutscene to the next screen:

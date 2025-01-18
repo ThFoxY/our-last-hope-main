@@ -10,6 +10,9 @@
 // Constant(s):
 #define MAP_ROWS 2
 #define MAP_COLS 3
+#define FILE_NAME_MAX_LENGTH 24
+#define PLAYER_NAME_MAX_LENGTH 12
+#define PROGRESS 10
 
 // External variable(s):
     // --- General ---
@@ -18,10 +21,12 @@
         extern int saveFileChosen; // Chosen save file.
         extern int currentScreen; // Current screen.
         extern int lastScreen; // Last screen played.
+        extern int saveProgress; // Progress on a save file;
 
     // --- Player ---
         extern int playerHealth;
         extern char playerInteract;
+        extern char playerName[PLAYER_NAME_MAX_LENGTH];
 
     // --- Map ---
     extern char** map[MAP_ROWS][MAP_COLS];
@@ -36,8 +41,10 @@
     extern int item7; // Batteries;
 
 // Mains functions:
-    // --- Game loop ---
+    // --- Game ---
         void gameLoop();
+        void saveGame();
+        void loadGame();
 
     // --- Screens ---
         void initLanguageScreen();
@@ -46,6 +53,7 @@
         void initNamingScreen();
         void initInventory();
         void initCredits();
+        void initGameOver();
 
     // -- Cutscenes ---
         void initOpeningCutscene();
@@ -91,6 +99,7 @@
     void readUniqueLine();
     void readBetween();
     void readLines();
+    void readLanguages();
 
     // --- Printing ---
     void clearScreen();
@@ -102,6 +111,7 @@
 
     // --- Player ---
     void healthBar();
+    void useHeal();
     void getPlayerName();
     char interactPlayer();
 
